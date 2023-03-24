@@ -5,10 +5,9 @@ from decouple import config
 bot = commands.Bot()
 
 
-@bot.slash_command(description="Replies with pong!")
+@bot.slash_command() # Just a basic ping command I added to test to see if the bot was working. (Will remove later.)
 async def ping(interaction: nextcord.Interaction):
     await interaction.send("Pong!", ephemeral=True)
 
 
-def start():
-    bot.run(config("TOKEN", cast=str))
+bot.run(config("TOKEN", cast=str))
