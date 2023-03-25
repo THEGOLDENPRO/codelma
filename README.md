@@ -2,6 +2,6 @@
 
   # Codelma
 
-  <sub>Solve python code snippets. ***Someone help me get a better slogan PLEASE, thank you.***</sub>
+  <sub>How well do you know Python? Challenge yourselves with Coding quizzes and solving Python code snippets.</sub>
 
 </div>
