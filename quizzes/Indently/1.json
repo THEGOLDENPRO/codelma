@@ -3,7 +3,6 @@
     "id": 1,
     "omit_code": false,
     "type": "multipleChoice",
-    "difficulty": 2,
     "question": "Where does the error occur?",
     "options": [
         "statement A", 
@@ -12,5 +11,6 @@
         "statement D", 
         "statement E"
     ],
-    "answer": 3
+    "answer": 3,
+    "difficulty": 2
 }

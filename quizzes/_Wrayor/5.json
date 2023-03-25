@@ -3,7 +3,6 @@
     "id": 5,
     "omit_code": false,
     "type": "multipleChoice",
-    "difficulty": 3,
     "question": "What is the result of this code?",
     "options": [
         "10",
@@ -11,5 +10,6 @@
         "Error",
         "None"
     ],
-    "answer": 2
+    "answer": 2,
+    "difficulty": 3
 }

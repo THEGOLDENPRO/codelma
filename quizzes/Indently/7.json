@@ -3,7 +3,7 @@
     "id": 7,
     "omit_code": false,
     "type": "trueFalse",
-    "difficulty": 3,
     "question": "What is the result of this code?",
-    "answer": false
+    "answer": false,
+    "difficulty": 3
 }

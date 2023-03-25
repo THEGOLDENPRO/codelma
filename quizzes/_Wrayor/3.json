@@ -3,7 +3,6 @@
     "id": 3,
     "omit_code": false,
     "type": "multipleChoice",
-    "difficulty": 4,
     "question": "What is the result of this code?",
     "options": [
         "Error",
@@ -12,5 +11,6 @@
         "60_09.0_0",
         "610_00.00_09"
     ],
-    "answer": 3
+    "answer": 3,
+    "difficulty": 4
 }
