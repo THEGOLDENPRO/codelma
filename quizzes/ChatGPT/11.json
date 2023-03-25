@@ -1,6 +1,7 @@
 {
     "creator": "ChatGPT",
     "id": 11,
+    "omit_code": false,
     "type": "multipleChoice",
     "question": "What is printed by the following python script?",
     "options": [
