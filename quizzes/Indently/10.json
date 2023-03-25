@@ -1,0 +1,9 @@
+{
+    "creator": "Indently",
+    "id": 10,
+    "omit_code": false,
+    "type": "trueFalse",
+    "difficulty": 4,
+    "question": "What is the result of this code?",
+    "answer": false
+}

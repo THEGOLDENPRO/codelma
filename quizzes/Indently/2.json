@@ -1,0 +1,15 @@
+{
+    "creator": "Indently",
+    "id": 2,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "difficulty": 3,
+    "question": "What is the result of this code?",
+    "options": [
+        "0: Elon\n1: Jeff\n2: Andrew\n3: Berg",  
+        "1: Elon\n2: Jeff\n3: Andrew\n4: Berg", 
+        "0: Jeff\n1: Andrew\n2: Berg",
+        "1: Jeff\n2: Andrew\n3: Berg"
+    ],
+    "answer": 1
+}

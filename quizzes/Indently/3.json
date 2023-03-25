@@ -1,0 +1,15 @@
+{
+    "creator": "Indently",
+    "id": 3,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "difficulty": 3,
+    "question": "What is the result of this code?",
+    "options": [
+        "100\n1000",  
+        "var100\n var21000",
+        "var 100\n var2 1000",
+        "var = 100\n var2 = 1000"
+    ],
+    "answer": 3
+}

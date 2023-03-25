@@ -1,0 +1,15 @@
+{
+    "creator": "Indently",
+    "id": 9,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "difficulty": 3,
+    "question": "What is the result of this code?",
+    "options": [
+        "5.00",
+        "3.85",
+        "4.76",
+        "None of the options"
+    ],
+    "answer": 3
+}
