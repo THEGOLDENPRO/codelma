@@ -46,6 +46,7 @@ class Codelma():
 
                 if os.path.splitext(file)[1] == ".json":
                     id_count += 1
+                    self.logger.debug(Colours.PINK_GREY.apply_to_string(f"Loading {author}/{id_count}..."))
 
                     json_config:dict = json.load(open(f"./quizzes/{author}/{id_count}.json"))
                     
@@ -80,7 +81,7 @@ class Codelma():
                         )
 
 
-            self.logger.debug(f"Loaded '{author}'s quizzes.")
+            self.logger.info(f"Loaded '{author}'s quizzes.")
 
     def __clear_cache(self) -> None:
         """Method that clears the cache."""
