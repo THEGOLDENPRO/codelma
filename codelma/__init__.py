@@ -88,7 +88,7 @@ class Codelma():
                         )
 
 
-            self.logger.info(f"Loaded '{author}'s quizzes.")
+            self.logger.info(f"Loaded {Colours.ORANGE + str(id_count) + Colours.RESET_COLOUR} quizzes from '{author}'s.")
 
     def __clear_cache(self) -> None:
         """Method that clears the cache."""
