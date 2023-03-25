@@ -6,4 +6,3 @@ print(name, ':', age)               # statement B
 print(f'{name} : {age}')            # statement C
 print('%s : %s'  %{name, age})      # statement D
 print('{} : {}'.format(name, age))  # statement E
-

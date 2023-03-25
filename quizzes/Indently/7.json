@@ -5,9 +5,5 @@
     "type": "trueFalse",
     "difficulty": 3,
     "question": "What is the result of this code?",
-    "options": [
-        "True",
-        "False"
-    ],
-    "answer": 1
+    "answer": false
 }
