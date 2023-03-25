@@ -1,8 +1,9 @@
 {
     "creator": "programizstudios",
-    "id": 1,
+    "id": 3,
+    "omit_code": false,
     "type": "multipleChoice",
-    "question": "What is printed by the following python script?",
+    "question": "What is printed by this python script?",
     "options": [
         "<class 'int'>",
         "<class 'str'>",
