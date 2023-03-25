@@ -1,6 +1,6 @@
 {
-    "creator": "b001",
-    "id": 2,
+    "creator": "ChatGPT",
+    "id": 6,
     "type": "multipleChoice",
     "question": "What is printed by the following python script?",
     "options": [
