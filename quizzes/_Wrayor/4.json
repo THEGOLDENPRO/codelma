@@ -1,0 +1,15 @@
+{
+    "creator": "_Wrayor",
+    "id": 4,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "difficulty": 3,
+    "question": "What is the result of this code?",
+    "options": [
+        "False\nFalse",
+        "True\nFalse",
+        "True\nTrue",
+        "False\nTrue"
+    ],
+    "answer": 1
+}

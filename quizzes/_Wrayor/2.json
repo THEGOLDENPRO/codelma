@@ -1,0 +1,16 @@
+{
+    "creator": "_Wrayor",
+    "id": 2,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "difficulty": 2,
+    "question": "What is the result of this code?",
+    "options": [
+        "[1, 1, 2, 2, 5]",  
+        "[1, 2, 2, 5]",
+        "Error", 
+        "[1, 2, 5, 1, 2, 5]",
+        "[1, 1, 2, 2, 5, 5]"
+    ],
+    "answer": 3
+}

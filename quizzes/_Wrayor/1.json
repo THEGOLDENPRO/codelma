@@ -1,0 +1,15 @@
+{
+    "creator": "_Wrayor",
+    "id": 1,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "difficulty": 2,
+    "question": "What is the result of this code?",
+    "options": [
+        "<class 'int'>\n<class 'tuple'>",  
+        "<class 'int'>\n<class 'int'>",
+        "<class 'tuple'>\n<class 'int'>", 
+        "<class 'tuple'>\n<class 'tuple'"
+    ],
+    "answer": 2
+}

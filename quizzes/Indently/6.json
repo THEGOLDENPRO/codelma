@@ -1,0 +1,16 @@
+{
+    "creator": "Indently",
+    "id": 6,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "difficulty": 4,
+    "question": "What is the result of this code?",
+    "options": [
+        "",  
+        "[[19 22],\n[43 50]]",
+        "[[19 22]\n[43 50]]",
+        "[[5 12]\n[21 32]]",
+        "[[5 12],\n[21 32]]"
+    ],
+    "answer": 1
+}
