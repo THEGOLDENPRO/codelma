@@ -12,9 +12,13 @@ Here you see each field listed and what it means.
 * `type`: **required** The type of the question. It can be one of the following:
   * `multipleChoice`: A question with multiple options to answer with.
   * `trueFalse`: A question that can be answered with true or false.
+  * `fillInTheBlank`: A question that can be answered with a string (usually a request to fill in a blank).
 * `question`: **required** The question to answer.
 * `options`: **required for `multipleChoice`** A list of options to answer with.
-* `answer`: ***required*** For `multipleChoice`, this is the index of the correct option in the `options`-list; for `trueFalse`, this is a boolean that is the correct answer to the question.
+* `answer`: ***required*** For:
+  * `multipleChoice`:  the index of the correct option in the `options`-list
+  * `trueFalse`: a boolean that is the correct answer to the question
+  * `fillInTheBlank`: a string that is the correct answer to the question
 * `difficulty`: ***optional*** A number from 1 to 5, stating how difficult a quiz is to solve. 
   The quiz is ok to answer for:  
   * ``1``: people that just started learning python.
