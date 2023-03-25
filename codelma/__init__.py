@@ -9,7 +9,7 @@ from devgoldyutils import Colours, add_custom_handler, LoggerAdapter
 codelma_logger = add_custom_handler(
     log.getLogger(Colours.PINK_GREY.apply_to_string("CODELMA"))
 )
-codelma_logger.setLevel(log.DEBUG)
+codelma_logger.setLevel(log.INFO)
 
 from .quiz import Quiz
 
@@ -55,7 +55,14 @@ class Codelma():
                     python_code_snippet:str|None = None
 
                     if json_config.get("omit_code", False) is False:
-                        python_code_snippet:str = open(f"./quizzes/{author}/{id_count}.py", mode="r").read()
+
+                        try:
+                            python_code_snippet:str = open(f"./quizzes/{author}/{id_count}.py", mode="r").read()
+                        except FileNotFoundError as e:
+                            self.logger.error(
+                                f"We got a FileNotFoundError when loading quiz '{author}/{id_count}'. Make sure 'omit_code' is set to true if you wish to not include code snippet.\n" + 
+                                f"Error >> {e}"
+                            )
 
                     # Appending the quiz dict and python code to the appropriate type list in cache.
                     # -------------------------------------------------------------------------------
