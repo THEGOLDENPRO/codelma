@@ -14,6 +14,8 @@ bot = commands.Bot()
 # -------------
 @bot.event
 async def on_ready():
+    # TODO: Place the quiz lookup method here once done.
+    
     codelma_logger.info(Colours.GREEN.apply_to_string("[We're ready!]"))
 
 
