@@ -1,0 +1,14 @@
+{
+    "creator": "ChatGPT",
+    "id": 12,
+    "type": "multipleChoice",
+    "question": "What is printed by the following python script?",
+    "options": [
+        "!dlroW ,olleH",
+        "Hello, World!",
+        "!dlroW olleH",
+        "dlroW ,olleH"
+    ],
+    "answer": 0,
+    "difficulty": 2
+}

@@ -1,0 +1,15 @@
+{
+    "creator": "ChatGPT",
+    "id": 13,
+    "type": "multipleChoice",
+    "question": "What is printed by the following python script?",
+    "options": [
+        "{1: 'a', 2: 'b', 3: 'c'}",
+        "{1: 'c', 2: 'b', 3: 'a'}",
+        "{'a': 1, 'b': 2, 'c': 3}",
+        "{'1': 'a', '2': 'b', '3': 'c'}",
+        "{1: 'b', 2: 'a', 3: 'c'}"
+    ],
+    "answer": 4,
+    "difficulty": 3
+}
