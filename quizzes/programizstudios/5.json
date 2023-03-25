@@ -1,0 +1,14 @@
+{
+    "creator": "programizstudios",
+    "id": 5,
+    "omit_code": true,
+    "type": "multipleChoice",
+    "question": "Which of these is a valid variable name in python?",
+    "options": [
+        "num-1",
+        "1num",
+        "num 1",
+        "num_1"
+    ],
+    "answer": 3
+}
