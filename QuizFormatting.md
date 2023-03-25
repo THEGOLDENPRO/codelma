@@ -9,6 +9,7 @@ Each quiz file has a JSON-file representing it.
 Here you see each field listed and what it means.  
 * `creator`: **required** The author of the quiz.
 * `id`: **required** The quiz-ID. Should be the same as the file name.
+* `omit_code`: **required** True if no code is required for the question.
 * `type`: **required** The type of the question. It can be one of the following:
   * `multipleChoice`: A question with multiple options to answer with.
   * `trueFalse`: A question that can be answered with true or false.
