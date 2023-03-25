@@ -1,0 +1,14 @@
+{
+    "creator": "b001",
+    "id": 2,
+    "type": "multipleChoice",
+    "question": "What is printed by the following python script?",
+    "options": [
+        "hello world",
+        "HELLO WORLD",
+        "Hello World",
+        "Hello world",
+        "Error"
+    ],
+    "answer": 2
+}

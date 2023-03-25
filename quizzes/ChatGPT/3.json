@@ -1,0 +1,12 @@
+{
+    "creator": "b001",
+    "id": 2,
+    "type": "multipleChoice",
+    "question": "What is printed by the following python script?",
+    "options": [
+        "['cherry', 'banana', 'apple']",
+        "['apple', 'banana', 'cherry']",
+        "['elppa', 'ananab', 'yrrehc']"
+    ],
+    "answer": 0
+}
