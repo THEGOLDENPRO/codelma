@@ -2,7 +2,7 @@ import os
 import json
 import logging as log
 from typing import Dict, Tuple, List
-from devgoldyutils import Colours, add_custom_handler, LoggerAdapter, pprint
+from devgoldyutils import Colours, add_custom_handler, LoggerAdapter
 
 codelma_logger = add_custom_handler(
     log.getLogger(Colours.PINK_GREY.apply_to_string("CODELMA"))
