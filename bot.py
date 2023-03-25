@@ -2,11 +2,12 @@ import nextcord
 import logging as log
 from nextcord.ext import commands
 from decouple import config
-from devgoldyutils import Colours, LoggerAdapter, add_custom_handler
+from devgoldyutils import Colours, LoggerAdapter
 
-codelma_logger = add_custom_handler(
-    log.getLogger(Colours.PINK_GREY.apply_to_string("CODELMA"))
-)
+from codelma import Codelma, codelma_logger
+
+codelma = Codelma()
+bot_logger = LoggerAdapter(codelma_logger, prefix="BOT")
 
 bot = commands.Bot()
 
@@ -14,9 +15,7 @@ bot = commands.Bot()
 # -------------
 @bot.event
 async def on_ready():
-    # TODO: Place the quiz lookup method here once done.
-    
-    codelma_logger.info(Colours.GREEN.apply_to_string("[We're ready!]"))
+    bot_logger.info(Colours.GREEN.apply_to_string("[We're ready!]"))
 
 
 # Commands
@@ -26,5 +25,4 @@ async def solve(interaction: nextcord.Interaction):
     await interaction.send("work in progress...", ephemeral=True)
 
 
-codelma_logger.setLevel(log.DEBUG)
 bot.run(config("TOKEN", cast=str))
