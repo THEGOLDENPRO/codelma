@@ -2,7 +2,7 @@ import nextcord
 import logging as log
 from nextcord.ext import commands
 from decouple import config
-from devgoldyutils import Colours, LoggerAdapter
+from devgoldyutils import Colours, LoggerAdapter, pprint
 
 from codelma import Codelma, codelma_logger
 

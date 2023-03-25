@@ -1,7 +1,7 @@
 import os
 import json
 import logging as log
-from typing import Dict, Tuple, List
+from typing import Dict, Tuple, List, Literal
 from devgoldyutils import Colours, add_custom_handler, LoggerAdapter
 
 codelma_logger = add_custom_handler(
@@ -9,6 +9,7 @@ codelma_logger = add_custom_handler(
 )
 codelma_logger.setLevel(log.DEBUG)
 
+from .quiz import Quiz
 
 class Codelma():
     """The main class. Allows you to retrieve quizzes."""
@@ -21,6 +22,11 @@ class Codelma():
 
         self.__load_quizzes()
 
+
+    # This method will most likely be changed soon as I don't think this is the best way.
+    def get_quizzes(self, type: Literal["multipleChoice"]) -> List[Quiz]:
+        """Returns a list of quizzes from that type."""
+        return [Quiz(quiz[0], quiz[1]) for quiz in self.__quizzes[type]]
     
 
     # If you wondering what the underscore is for, these are just private methods that are used internally in this class and are not be used externally.
