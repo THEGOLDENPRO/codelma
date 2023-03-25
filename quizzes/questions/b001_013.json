@@ -1,0 +1,14 @@
+{
+    "creator": "b001",
+    "id": 13,
+    "type": "multipleChoice",
+    "question": "What is the result of this code?",
+    "options": [
+        "[1, 4]",
+        "4",
+        "-1",
+        "[2, 5]",
+        "1"
+    ],
+    "answer": 1
+}
