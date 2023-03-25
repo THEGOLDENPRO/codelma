@@ -1,0 +1,14 @@
+{
+    "creator": "programizstudios",
+    "id": 1,
+    "type": "multipleChoice",
+    "question": "What is printed by the following python script?",
+    "options": [
+        "100",
+        "1",
+        "128",
+        "2"
+    ],
+    "answer": 3,
+    "difficulty": 1
+}

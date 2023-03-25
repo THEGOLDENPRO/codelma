@@ -1,0 +1,14 @@
+{
+    "creator": "programizstudios",
+    "id": 1,
+    "type": "multipleChoice",
+    "question": "How many times does the print statement execute in this python script?",
+    "options": [
+        "10",
+        "0",
+        "3",
+        "2"
+    ],
+    "answer": 3,
+    "difficulty": 3
+}
