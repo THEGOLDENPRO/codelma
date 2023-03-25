@@ -3,7 +3,7 @@
     "id": 7,
     "omit_code": false,
     "type": "multipleChoice",
-    "question": "What is printed by the following python script?",
+    "question": "What is printed by this python script?",
     "options": [
         "[1, 2, 5, 3, 4]",
         "[1, 5, 2, 3, 4]",
