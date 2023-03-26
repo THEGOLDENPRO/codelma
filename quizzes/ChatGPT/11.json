@@ -2,7 +2,7 @@
     "creator": "ChatGPT",
     "id": 11,
     "omit_code": false,
-    "type": "multipleChoice",
+    "type": "multiple_choice",
     "question": "What is printed by this python script?",
     "options": [
         "[1, 2]",

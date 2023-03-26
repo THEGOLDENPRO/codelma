@@ -2,7 +2,7 @@
     "creator": "programizstudios",
     "id": 5,
     "omit_code": true,
-    "type": "multipleChoice",
+    "type": "multiple_choice",
     "question": "Which of these is a valid variable name in python?",
     "options": [
         "num-1",
