@@ -31,5 +31,6 @@ class TrueFalse(nextcord.ui.View):
 
         else:
             await interaction.response.send_message(
-                "**🛑 You can only answer your own Quiz!**"
+                "🛑 You can only answer your own Quiz!",
+                ephemeral = True
             )
