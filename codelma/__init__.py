@@ -42,6 +42,7 @@ class Codelma():
         for author in os.listdir("./quizzes"):
 
             id_count = 0
+            not_loaded_count = 0
             for file in os.listdir(f"./quizzes/{author}"):
 
                 if os.path.splitext(file)[1] == ".json":
@@ -83,12 +84,13 @@ class Codelma():
                             )
 
                     else:
+                        not_loaded_count += 1
                         self.logger.error(
                             f"The quiz '{author}/{id_count}' does not contain a type so it will NOT be loaded."
                         )
 
 
-            self.logger.info(f"Loaded {Colours.ORANGE + str(id_count) + Colours.RESET_COLOUR} quizzes from '{author}'s.")
+            self.logger.info(f"Loaded {Colours.ORANGE + str(id_count - not_loaded_count) + Colours.RESET_COLOUR} quizzes from '{author}'s.")
 
     def __clear_cache(self) -> None:
         """Method that clears the cache."""
