@@ -6,7 +6,7 @@ from decouple import config
 from devgoldyutils import Colours, LoggerAdapter
 
 from codelma import Codelma, codelma_logger
-from codelma.journey import Journey
+from codelma.puzzle import Puzzle
 from codelma.quiz_types import QuizTypes
 
 codelma = Codelma()
@@ -23,7 +23,7 @@ async def on_ready():
 
 # Commands
 # -------------
-@bot.slash_command(name="solve", description="⭐ Begin your journey.", guild_ids=[863416692083916820]) # Added my guild id for testing, add yours too if you would like to test this command.
+@bot.slash_command(name="solve", description="🧩 Begin your puzzle.", guild_ids=[863416692083916820]) # Added my guild id for testing, add yours too if you would like to test this command.
 async def solve(
     interaction: nextcord.Interaction, 
     type: int = nextcord.SlashOption(
@@ -40,9 +40,9 @@ async def solve(
     
     quiz_type = QuizTypes(type)
 
-    journey = Journey(interaction, codelma, quiz_type)
+    puzzle = Puzzle(interaction, codelma, quiz_type)
 
-    await journey.start()
+    await puzzle.start()
 
 
 bot.run(config("TOKEN", cast=str))

@@ -22,7 +22,6 @@ class Codelma():
 
         self.__quizzes:Dict[str, List[Tuple[dict, str|None]]] = {
             "multiple_choice" : [],
-
             "true_false": []
         }
 
