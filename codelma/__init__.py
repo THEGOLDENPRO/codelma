@@ -4,7 +4,7 @@ import os
 import json
 import random
 import logging as log
-from typing import Dict, Tuple, List, Literal
+from typing import Dict, Tuple, List
 from devgoldyutils import Colours, add_custom_handler, LoggerAdapter
 
 codelma_logger = add_custom_handler(
@@ -44,7 +44,7 @@ class Codelma():
         if isinstance(type, QuizTypes):
             type = type.name
         
-        return [Quiz(quiz[0], quiz[1]) for quiz in self.__quizzes[type]]
+        return [Quiz(quiz[0], quiz[1]) for quiz in self.__quizzes[type.lower()]]
     
 
     # If you wondering what the underscore is for, these are just private methods that are used internally in this class and are not be used externally.
@@ -87,7 +87,7 @@ class Codelma():
 
                         try:
 
-                            self.__quizzes[type].append(
+                            self.__quizzes[type.lower()].append(
                                 (json_config, python_code_snippet)
                             )
 

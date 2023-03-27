@@ -19,19 +19,21 @@ class Journey():
         self.embed = nextcord.Embed(
             colour = 0x2B2D31 # Invisible colour.
         )
+        self.embed.title = "🧩 Solve!"
 
     async def start(self):
         """Starts a quiz."""
         quiz = self.codelma.get_quiz(self.quiz_type)
         quiz_embed = self.embed.copy()
 
-        quiz_embed.title = "• " + quiz.question 
-
-        quiz_embed.description = f"""
+        quiz_embed.add_field(
+            name = quiz.question,
+            value = f"""
 ```python
 {quiz.python_snippet}
 ```
-        """
+            """
+        )
 
         quiz_embed.set_footer(
             text = f"Author: {quiz.creator}"

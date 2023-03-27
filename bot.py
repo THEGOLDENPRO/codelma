@@ -23,7 +23,7 @@ async def on_ready():
 
 # Commands
 # -------------
-@bot.slash_command(description="⭐ Begin your journey.", guild_ids=[863416692083916820]) # Added my guild id for testing, add yours too if you would like to test this command.
+@bot.slash_command(name="solve", description="⭐ Begin your journey.", guild_ids=[863416692083916820]) # Added my guild id for testing, add yours too if you would like to test this command.
 async def solve(
     interaction: nextcord.Interaction, 
     type: int = nextcord.SlashOption(

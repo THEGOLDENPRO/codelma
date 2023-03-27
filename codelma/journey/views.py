@@ -11,23 +11,38 @@ class TrueFalse(nextcord.ui.View):
     # ----------
     @nextcord.ui.button(label="True", style=nextcord.ButtonStyle.green)
     async def true(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
-        await self.is_answer_correct(interaction, True)
+        await self.is_answer_correct(button, interaction, True)
 
     @nextcord.ui.button(label="False", style=nextcord.ButtonStyle.grey)
     async def false(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
-        await self.is_answer_correct(interaction, False)
+        await self.is_answer_correct(button, interaction, False)
 
 
     # Answer checker.
     # ----------------
-    async def is_answer_correct(self, interaction: nextcord.Interaction, answer):
+    async def is_answer_correct(self, button: nextcord.ui.Button, interaction: nextcord.Interaction, answer):
         if self.author.id == interaction.user.id:
             if answer == self.correct_answer:
-                await interaction.response.send_message("✅ Your answer is correct!")
+                msg = "✅ Your answer is correct!"
             else:
-                await interaction.response.send_message("❌ Your answer is wrong!")
+                msg = f"❌ Wrong! The right answer was ``{answer}``."
+
+            # Grey out button.
+            # -----------------
+            for item in self.children:
+                item.disabled = True
+
+            await interaction.response.edit_message(
+                view = self
+            )
+
+
+            await interaction.followup.send(
+                content = msg
+            )
 
             self.stop()
+            
 
         else:
             await interaction.response.send_message(
