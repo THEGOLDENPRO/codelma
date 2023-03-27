@@ -1,0 +1,15 @@
+{
+    "creator": "_Wrayor",
+    "id": 5,
+    "omit_code": false,
+    "type": "multipleChoice",
+    "question": "What is the result of this code?",
+    "options": [
+        "r a r e",
+        "rarerarerare...",
+        "*rare",
+        "<rare:str>"
+    ],
+    "answer": 0,
+    "difficulty": 3
+}
