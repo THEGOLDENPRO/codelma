@@ -1,7 +1,7 @@
 {
             "creator": "b001",
             "id": 2,
-            "type": "multipleChoice",
+            "type": "multiple_choice",
             "question": "What is the result of this code?",
             "options": [
                 "[1, 2, 100]",

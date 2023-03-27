@@ -2,16 +2,19 @@ from __future__ import annotations
 
 import os
 import json
+import random
 import logging as log
-from typing import Dict, Tuple, List, Literal
+from decouple import config
+from typing import Dict, Tuple, List
 from devgoldyutils import Colours, add_custom_handler, LoggerAdapter
 
 codelma_logger = add_custom_handler(
     log.getLogger(Colours.PINK_GREY.apply_to_string("CODELMA"))
 )
-codelma_logger.setLevel(log.INFO)
+codelma_logger.setLevel(getattr(log, config("LOG_LEVEL", default="INFO")))
 
 from .quiz import Quiz
+from .quiz_types import QuizTypes
 
 class Codelma():
     """The main class. Allows you to retrieve quizzes."""
@@ -19,18 +22,29 @@ class Codelma():
         self.logger = LoggerAdapter(codelma_logger, prefix="Codelma")
 
         self.__quizzes:Dict[str, List[Tuple[dict, str|None]]] = {
-            "multipleChoice" : [],
-
-            "trueFalse": []
+            "multiple_choice" : [],
+            "true_false": []
         }
+
+        self.global_quiz_count = 0
 
         self.__load_quizzes()
 
 
-    # This method will most likely be changed soon as I don't think this is the best way.
-    def get_quizzes(self, type: Literal["multipleChoice"]) -> List[Quiz]:
+    def get_quiz(self, type: QuizTypes | str) -> Quiz:
+        """Returns a random quiz from that type."""
+        if isinstance(type, QuizTypes):
+            type = type.name
+
+        quiz = random.choice(self.__quizzes[type.lower()])
+        return Quiz(quiz[0], quiz[1])
+
+    def get_quizzes(self, type: QuizTypes | str) -> List[Quiz]:
         """Returns a list of quizzes from that type."""
-        return [Quiz(quiz[0], quiz[1]) for quiz in self.__quizzes[type]]
+        if isinstance(type, QuizTypes):
+            type = type.name
+        
+        return [Quiz(quiz[0], quiz[1]) for quiz in self.__quizzes[type.lower()]]
     
 
     # If you wondering what the underscore is for, these are just private methods that are used internally in this class and are not be used externally.
@@ -73,7 +87,7 @@ class Codelma():
 
                         try:
 
-                            self.__quizzes[type].append(
+                            self.__quizzes[type.lower()].append(
                                 (json_config, python_code_snippet)
                             )
 
@@ -89,7 +103,7 @@ class Codelma():
                             f"The quiz '{author}/{id_count}' does not contain a type so it will NOT be loaded."
                         )
 
-
+            self.global_quiz_count += (id_count - not_loaded_count)
             self.logger.info(f"Loaded {Colours.ORANGE + str(id_count - not_loaded_count) + Colours.RESET_COLOUR} quizzes from '{author}'s.")
 
     def __clear_cache(self) -> None:
