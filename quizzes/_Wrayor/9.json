@@ -2,8 +2,8 @@
 	"creator": "_Wrayor",
 	"id": 9,
 	"omit_code": true,
-	"type": "trueFalse",
+	"type": "true_false",
 	"question": "Identifiers are name used to identify a variable, function in a program.",
 	"answer": 1,
-	"difficulty": 1,
+	"difficulty": 1
 }

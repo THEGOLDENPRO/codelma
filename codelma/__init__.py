@@ -4,13 +4,14 @@ import os
 import json
 import random
 import logging as log
+from decouple import config
 from typing import Dict, Tuple, List
 from devgoldyutils import Colours, add_custom_handler, LoggerAdapter
 
 codelma_logger = add_custom_handler(
     log.getLogger(Colours.PINK_GREY.apply_to_string("CODELMA"))
 )
-codelma_logger.setLevel(log.INFO)
+codelma_logger.setLevel(getattr(log, config("LOG_LEVEL", default="INFO")))
 
 from .quiz import Quiz
 from .quiz_types import QuizTypes
