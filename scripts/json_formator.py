@@ -193,6 +193,7 @@ def true_false(fields, datatypes, data):
 
     fields.pop(Options_index) # removing the options field for true_false type.
     datatypes.pop(Options_index) # removing the options datatype since options field not there.
+    datatypes[-2] = 'bool'
 
     data.append(int(input('\n' + 'answer' + ' :: ')))
     data.append(int(input('\n' + 'difficulty' + ' :: ')))

@@ -6,7 +6,7 @@
 	"question": "Which of the following is a valid keyword in Python?",
 	"options": [
 		"false",
-		"none",
+		"return",
 		"non_local",
 		"none"
 	],
