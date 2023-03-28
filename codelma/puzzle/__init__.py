@@ -55,7 +55,11 @@ class Puzzle():
             return await view.wait()
 
         if quiz.type == QuizTypes.MULTIPLE_CHOICE.name.lower():
-            # TODO: NOT IMPLEMENTED YET!
+            view = views.MultiChoice(self.interaction.user, quiz.options, quiz.answer)
+
             await self.interaction.send(
-                "*Work in progress, currently only true_false works...*"
+                embed = embed, 
+                view = view
             )
+
+            return await view.wait()
