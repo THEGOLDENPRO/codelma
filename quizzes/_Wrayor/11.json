@@ -1,0 +1,15 @@
+{
+	"creator": "_Wrayor",
+	"id": 11,
+	"omit_code": true,
+	"type": "multi_choice",
+	"question": "Which of the following operators would return either True or False?",
+	"options": [
+		"+=",
+		"!=",
+		"=",
+		"*="
+	],
+	"answer": 1,
+	"difficulty": 1
+}

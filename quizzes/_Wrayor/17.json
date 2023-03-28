@@ -1,0 +1,9 @@
+{
+	"creator": "_Wrayor",
+	"id": 17,
+	"omit_code": true,
+	"type": "text",
+	"question": "The ___ statement exits the current loop and goes to the next iterration of it.",
+	"answer": "continue",
+	"difficulty": 2
+}
