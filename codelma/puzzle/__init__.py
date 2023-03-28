@@ -55,7 +55,7 @@ class Puzzle():
             return await view.wait()
 
         if quiz.type == QuizTypes.MULTIPLE_CHOICE.name.lower():
-            view = views.MultiChoice(self.interaction.user, quiz.options, quiz.answer)
+            view = views.MultiChoice(self.interaction.user, quiz.answer, quiz.options)
 
             await self.interaction.send(
                 embed = embed, 
