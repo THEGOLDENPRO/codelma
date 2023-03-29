@@ -1,0 +1,15 @@
+{
+	"creator": "_Wrayor",
+	"id": 21,
+	"omit_code": false,
+	"type": "multiple_choice",
+	"question": "What will be the given expression be evaluated to in Python?",
+	"options": [
+		"8.5",
+		"8.0",
+		"10.2",
+		"10.0"
+	],
+	"answer": 1,
+	"difficulty": 1
+}

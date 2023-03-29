@@ -1,0 +1,15 @@
+{
+	"creator": "_Wrayor",
+	"id": 18,
+	"omit_code": false,
+	"type": "multiple_choice",
+	"question": "Which of the following will be the correct output of this code?",
+	"options": [
+		"True",
+		"False",
+		"NONE",
+		"NULL"
+	],
+	"answer": 0,
+	"difficulty": 1
+}

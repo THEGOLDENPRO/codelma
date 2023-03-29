@@ -1,0 +1,9 @@
+{
+	"creator": "_Wrayor",
+	"id": 22,
+	"omit_code": true,
+	"type": "true_false",
+	"question": "To use a function from a particular module, we need to import the module.",
+	"answer": true,
+	"difficulty": 2
+}

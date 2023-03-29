@@ -1,0 +1,9 @@
+{
+	"creator": "_Wrayor",
+	"id": 23,
+	"omit_code": true,
+	"type": "true_false",
+	"question": "import statement can be written anywhere inside a program, before using a function from that module.",
+	"answer": true,
+	"difficulty": 3
+}

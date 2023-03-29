@@ -175,7 +175,7 @@ def multi_choice(fields, datatypes, data):
 
     # Ask user for total number of options and get the options.
     for optnum in range(int(input('\n' + "Total options :: "))):
-        option = input(f'Option {optnum + 1} :: ')
+        option = input(f'Option {optnum} :: ')
         options.append(option)
 
     data.append(options)
@@ -195,7 +195,7 @@ def true_false(fields, datatypes, data):
     datatypes.pop(Options_index) # removing the options datatype since options field not there.
     datatypes[-2] = 'bool'
 
-    data.append(int(input('\n' + 'answer' + ' :: ')))
+    data.append(bool(input('\n' + 'answer' + ' :: ').title()))
     data.append(int(input('\n' + 'difficulty' + ' :: ')))
     return data, fields, datatypes
 
@@ -229,6 +229,9 @@ def json_formator(fields, datatypes, data):
         # if datatype string then put "" around the data.
         if datatypes[index] == 'str':
             data[index] = f'"{data[index]}"'
+
+        if datatypes[index] == 'bool':
+            data[index] = f'{str(data[index]).lower()}'
 
         # if datatype list then format in a clean way.
         if datatypes[index] == 'list':
@@ -291,7 +294,7 @@ def start():
     Fields = ['creator', 'id', 'omit_code', 'tags', 'type', 'question', 'options', 'answer', 'difficulty']
     Fields_Datatypes = ['str', 'int', 'bool', 'list', 'str', 'str', 'list', 'int', 'int']
 
-    Types = ['multi_choice', 'true_false', 'text']
+    Types = ['multiple_choice', 'true_false', 'text']
 
     Available_Tags = ['list', 'str', 'dict', 'for', 'while', 'listcomp', 'dictcomp', 'eval',
                     'inlinestatements', 'func', 'nameing', 'syntax', 'scope']
@@ -302,7 +305,8 @@ def start():
 
     # Gather remaining data and format them into a json file adn writte them.
     while True:
-
+        Field = DEFAULTS[3]
+        Field_data = DEFAULTS[4]
         
         # Gather more data.
         __data__, __fields__, __datatypes__ = getter(Fields, Fields_Datatypes, Types, Available_Tags, DEFAULTS)

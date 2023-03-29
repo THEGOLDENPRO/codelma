@@ -1,0 +1,15 @@
+{
+	"creator": "_Wrayor",
+	"id": 19,
+	"omit_code": false,
+	"type": "multiple_choice",
+	"question": "What will be the result of this code?",
+	"options": [
+		"['Andrew Maxwell','@','75']",
+		"['Andrew','Maxwell','@','75']",
+		"('Andrew', 'Maxwell @ 75')",
+		"('Andrew',' ','Maxwell @ 75')"
+	],
+	"answer": 3,
+	"difficulty": 2
+}

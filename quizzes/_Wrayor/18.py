@@ -1,0 +1,1 @@
+print(5<10 and 12>7 or not 7>4)
