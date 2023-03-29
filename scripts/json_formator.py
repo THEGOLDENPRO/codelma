@@ -306,7 +306,7 @@ def start():
     # Gather remaining data and format them into a json file adn writte them.
     while True:
         Field = DEFAULTS[3]
-        Field_data = DEFAULTS[4]
+        Fields_Datatypes = DEFAULTS[4]
         
         # Gather more data.
         __data__, __fields__, __datatypes__ = getter(Fields, Fields_Datatypes, Types, Available_Tags, DEFAULTS)
