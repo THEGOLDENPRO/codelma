@@ -26,17 +26,22 @@ class Puzzle():
         quiz = self.codelma.get_quiz(self.quiz_type)
         quiz_embed = self.embed.copy()
 
-        quiz_embed.add_field(
-            name = quiz.question,
-            value = f"""
+        code_block = f"""
 ```python
 {quiz.python_snippet}
 ```
-            """
+        """
+
+        quiz_embed.add_field(
+            name = quiz.question,
+            value = (lambda: "" if quiz.python_snippet is None else code_block)()
         )
 
         quiz_embed.set_footer(
-            text = f"Author: {quiz.creator}"
+            text = f"""
+ID: {quiz.id}
+Author: {quiz.creator}
+"""
         )
 
         await self.send_quiz(quiz_embed, quiz)

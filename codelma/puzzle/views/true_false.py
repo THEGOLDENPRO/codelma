@@ -13,6 +13,6 @@ class TrueFalse(PuzzleView):
     async def true(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
         await self.is_answer_correct(button, interaction, True)
 
-    @nextcord.ui.button(label="False", style=nextcord.ButtonStyle.grey)
+    @nextcord.ui.button(label="False", style=nextcord.ButtonStyle.red)
     async def false(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
         await self.is_answer_correct(button, interaction, False)
