@@ -179,7 +179,7 @@ def multi_choice(fields, datatypes, data):
         options.append(option)
 
     data.append(options)
-    data.append(int(input('\n' + 'answer' + ' :: ')))
+    data.append(int(input('\n' + 'answer num' + ' :: ')))
     data.append(int(input('\n' + 'difficulty' + ' :: ')))
     return data, fields, datatypes
 
