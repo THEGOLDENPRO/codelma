@@ -11,9 +11,9 @@ class Quiz(DictDataclass):
     data:dict = field(repr=False)
     python_snippet:str|None
 
+    id:int
     creator:str
 
-    id:str = field(init=False)
     type:str = field(init=False)
     question:str = field(init=False)
     options:List[str]|None = field(init=False)
@@ -23,7 +23,6 @@ class Quiz(DictDataclass):
         self.logger = LoggerAdapter(codelma_logger, prefix=f"Quiz")
         super().__post_init__()
 
-        self.id = str(self.get("id"))
         self.type = self.get("type")
         self.question = self.get("question")
         self.options = (lambda: None if self.type == QuizTypes.TRUE_FALSE.name.lower() else self.get("options"))()

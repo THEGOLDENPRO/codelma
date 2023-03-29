@@ -37,14 +37,14 @@ class Codelma():
             type = type.name
 
         quiz = random.choice(self.__quizzes[type.lower()])
-        return Quiz(quiz[0], quiz[1], quiz[2])
+        return Quiz(quiz[0], quiz[1], quiz[2], quiz[3])
 
     def get_quizzes(self, type: QuizTypes | str) -> List[Quiz]:
         """Returns a list of quizzes from that type."""
         if isinstance(type, QuizTypes):
             type = type.name
         
-        return [Quiz(quiz[0], quiz[1], quiz[2]) for quiz in self.__quizzes[type.lower()]]
+        return [Quiz(quiz[0], quiz[1], quiz[2], quiz[3]) for quiz in self.__quizzes[type.lower()]]
     
 
     # If you wondering what the underscore is for, these are just private methods that are used internally in this class and are not be used externally.
@@ -88,7 +88,7 @@ class Codelma():
                         try:
 
                             self.__quizzes[type.lower()].append(
-                                (json_config, python_code_snippet, author)
+                                (json_config, python_code_snippet, id_count, author)
                             )
 
                         except KeyError as e:
