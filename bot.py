@@ -29,8 +29,8 @@ async def solve(
     type: int = nextcord.SlashOption(
         name = "quiz_type",
         choices = {
-            "multiple_choice": 0, 
-            "true_false": 1
+            "Multiple Choice": 0, 
+            "True or False": 1
         }, 
         required = False)
     ):

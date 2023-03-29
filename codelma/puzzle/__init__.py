@@ -26,17 +26,22 @@ class Puzzle():
         quiz = self.codelma.get_quiz(self.quiz_type)
         quiz_embed = self.embed.copy()
 
-        quiz_embed.add_field(
-            name = quiz.question,
-            value = f"""
+        code_block = f"""
 ```python
 {quiz.python_snippet}
 ```
-            """
+        """
+
+        quiz_embed.add_field(
+            name = quiz.question,
+            value = (lambda: "" if quiz.python_snippet is None else code_block)()
         )
 
         quiz_embed.set_footer(
-            text = f"Author: {quiz.creator}"
+            text = f"""
+ID: {quiz.id}
+Author: {quiz.creator}
+"""
         )
 
         await self.send_quiz(quiz_embed, quiz)
@@ -55,7 +60,11 @@ class Puzzle():
             return await view.wait()
 
         if quiz.type == QuizTypes.MULTIPLE_CHOICE.name.lower():
-            # TODO: NOT IMPLEMENTED YET!
+            view = views.MultiChoice(self.interaction.user, quiz.answer, quiz.options)
+
             await self.interaction.send(
-                "*Work in progress, currently only true_false works...*"
+                embed = embed, 
+                view = view
             )
+
+            return await view.wait()

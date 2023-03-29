@@ -2,7 +2,7 @@
 	"creator": "_Wrayor",
 	"id": 10,
 	"omit_code": true,
-	"type": "multi_choice",
+	"type": "multiple_choice",
 	"question": "Which of the following is a valid keyword in Python?",
 	"options": [
 		"false",

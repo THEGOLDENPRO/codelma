@@ -21,10 +21,10 @@ class Codelma():
     def __init__(self) -> None:
         self.logger = LoggerAdapter(codelma_logger, prefix="Codelma")
 
-        self.__quizzes:Dict[str, List[Tuple[dict, str|None]]] = {
-            "multiple_choice" : [],
-            "true_false": []
-        }
+        self.__quizzes:Dict[str, List[Tuple[dict, str|None]]] = {}
+        
+        for type in QuizTypes:
+            self.__quizzes[type.name.lower()] = []
 
         self.global_quiz_count = 0
 

@@ -2,7 +2,7 @@
 	"creator": "_Wrayor",
 	"id": 11,
 	"omit_code": true,
-	"type": "multi_choice",
+	"type": "multiple_choice",
 	"question": "Which of the following operators would return either True or False?",
 	"options": [
 		"+=",
