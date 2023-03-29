@@ -7,14 +7,14 @@ class MultiChoice(PuzzleView):
     def __init__(self, author: nextcord.Member, correct_answer: int, options:List[str]):
         super().__init__(author, correct_answer)
 
-        self.correct_answer:int = self.children[correct_answer].label
-
         for option in options:
             self.add_item(
                 MultiChoiceButton(
                     name = option
                 )
             )
+
+        self.correct_answer:int = self.children[correct_answer].label
 
 
 class MultiChoiceButton(nextcord.ui.Button):
