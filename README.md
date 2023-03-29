@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img align="right" src="./assets/in_development.png" width="330px">
+  <img align="right" src="./assets/in_development.png" width="240px">
 
   # Codelma
 
