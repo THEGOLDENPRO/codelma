@@ -1,6 +1,4 @@
 {
-	"creator": "_Wrayor",
-	"id": 13,
 	"omit_code": true,
 	"type": "multiple_choice",
 	"question": "What is the default value of reference point in seek() function from pickle module?",
