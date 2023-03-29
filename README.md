@@ -9,7 +9,7 @@
 
   **True or False**          | **Multiple Choice**
   :-------------------------:|:-------------------------:
-  <img src="./assets/true_false_1.png" width="300px"> | <img src="./assets/multiple_choice_1.png" width="300px">
+  <img src="./assets/true_false_1.png" width="280px"> | <img src="./assets/multiple_choice_1.png" width="280px">
 
 </div>
 
