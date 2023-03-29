@@ -64,7 +64,8 @@ class Codelma():
                     self.logger.debug(Colours.PINK_GREY.apply_to_string(f"Loading {author}/{id_count}..."))
 
                     json_config:dict = json.load(open(f"./quizzes/{author}/{id_count}.json"))
-                    
+
+
                     # If the 'omit_code' json key is not set to true, we will search for a python code snippet.
                     # -------------------------------------------------------------------------------------------
                     python_code_snippet:str|None = None
@@ -78,6 +79,7 @@ class Codelma():
                                 f"We got a FileNotFoundError when loading quiz '{author}/{id_count}'. Make sure 'omit_code' is set to true if you wish to not include code snippet.\n" + 
                                 f"Error >> {e}"
                             )
+
 
                     # Appending the quiz dict and python code to the appropriate type list in cache.
                     # -------------------------------------------------------------------------------
