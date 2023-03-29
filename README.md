@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img align="right" src="./assets/in_development.png" width="240px">
+  <img align="right" src="./assets/in_development.png" width="200px">
 
   # Codelma
 
@@ -9,7 +9,7 @@
 
   **True or False**          | **Multiple Choice**
   :-------------------------:|:-------------------------:
-  <img src="./assets/true_false_1.png" width="240px"> | <img src="./assets/multiple_choice_1.png" width="240px">
+  <img src="./assets/true_false_1.png" width="300px"> | <img src="./assets/multiple_choice_1.png" width="300px">
 
 </div>
 
