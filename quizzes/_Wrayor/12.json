@@ -3,7 +3,7 @@
 	"id": 12,
 	"omit_code": true,
 	"type": "multi_choice",
-	"question": "Which of the following statements will result in an error?",
+	"question": "Assume `Tup` is a tuple. Which of the following statements will result in an error?",
 	"options": [
 		"print(Tup[0])",
 		"Tup.insert(2,3)",
