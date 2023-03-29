@@ -19,18 +19,22 @@ def default_start(fields, datatypes, types, available_tags):
     default_data = [] # the default data is stored in this variable.
     
     for field in fields[:Type_index + 1]: # iterrating through all the fields.
-        
+
+        # asks for Author/Creator of the question
         if field == "creator":
             creator = input('\n' + 'creator' + ' :: ')
-            
+
+            # checks if the user exists in the quizzes directory.
             if path.exists(f'quizzes\\{creator}'):
                 default_data.append(creator)
+            # if not then asks if the user wants to create a new directory.
             else:
                 choice = input(f"\nDo you want to create a new directory {creator}? y|n :: ")
                 
                 if choice.lower() in "yes":
                     makedirs(f'quizzes\\{creator}')
                     default_data.append(creator)
+                # Try Again.
                 else:
                     return None
         
