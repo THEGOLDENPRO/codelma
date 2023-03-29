@@ -1,4 +1,6 @@
 {
+	"omit_code": false,
+    "type": "multiple_choice",
     "question": "Where does the error occur?",
     "options": [
         "statement A", 

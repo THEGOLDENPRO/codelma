@@ -1,4 +1,6 @@
 {
+	"omit_code": false,
+    "type": "true_false",
     "question": "What is the result of this code?",
     "answer": false,
     "difficulty": 3

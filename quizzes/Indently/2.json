@@ -1,4 +1,6 @@
 {
+	"omit_code": false,
+    "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [
         "0: Elon\n1: Jeff\n2: Andrew\n3: Berg",  
