@@ -1,0 +1,15 @@
+{
+	"creator": "_Wrayor",
+	"id": 12,
+	"omit_code": true,
+	"type": "multi_choice",
+	"question": "Assume `Tup` is a tuple. Which of the following statements will result in an error?",
+	"options": [
+		"print(Tup[0])",
+		"Tup.insert(2,3)",
+		"print(Tup[1:2])",
+		"print(len(Tup))"
+	],
+	"answer": 1,
+	"difficulty": 2
+}
