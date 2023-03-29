@@ -11,11 +11,12 @@ class Quiz(DictDataclass):
     data:dict = field(repr=False)
     python_snippet:str|None
 
+    creator:str
+
     id:str = field(init=False)
     type:str = field(init=False)
     question:str = field(init=False)
     options:List[str]|None = field(init=False)
-    creator:str = field(init=False)
     answer:int|bool = field(init=False)
 
     def __post_init__(self):
@@ -26,7 +27,6 @@ class Quiz(DictDataclass):
         self.type = self.get("type")
         self.question = self.get("question")
         self.options = (lambda: None if self.type == QuizTypes.TRUE_FALSE.name.lower() else self.get("options"))()
-        self.creator = self.get("creator")
         self.answer = self.get("answer")
 
 
