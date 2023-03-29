@@ -21,7 +21,7 @@ class Codelma():
     def __init__(self) -> None:
         self.logger = LoggerAdapter(codelma_logger, prefix="Codelma")
 
-        self.__quizzes:Dict[str, List[Tuple[dict, str|None]]] = {}
+        self.__quizzes:Dict[str, List[Tuple[dict, str|None, str]]] = {}
         
         for type in QuizTypes:
             self.__quizzes[type.name.lower()] = []
@@ -37,14 +37,14 @@ class Codelma():
             type = type.name
 
         quiz = random.choice(self.__quizzes[type.lower()])
-        return Quiz(quiz[0], quiz[1])
+        return Quiz(quiz[0], quiz[1], quiz[2], quiz[3])
 
     def get_quizzes(self, type: QuizTypes | str) -> List[Quiz]:
         """Returns a list of quizzes from that type."""
         if isinstance(type, QuizTypes):
             type = type.name
         
-        return [Quiz(quiz[0], quiz[1]) for quiz in self.__quizzes[type.lower()]]
+        return [Quiz(quiz[0], quiz[1], quiz[2], quiz[3]) for quiz in self.__quizzes[type.lower()]]
     
 
     # If you wondering what the underscore is for, these are just private methods that are used internally in this class and are not be used externally.
@@ -64,7 +64,8 @@ class Codelma():
                     self.logger.debug(Colours.PINK_GREY.apply_to_string(f"Loading {author}/{id_count}..."))
 
                     json_config:dict = json.load(open(f"./quizzes/{author}/{id_count}.json"))
-                    
+
+
                     # If the 'omit_code' json key is not set to true, we will search for a python code snippet.
                     # -------------------------------------------------------------------------------------------
                     python_code_snippet:str|None = None
@@ -79,6 +80,7 @@ class Codelma():
                                 f"Error >> {e}"
                             )
 
+
                     # Appending the quiz dict and python code to the appropriate type list in cache.
                     # -------------------------------------------------------------------------------
                     type:str|None = json_config.get("type")
@@ -88,7 +90,7 @@ class Codelma():
                         try:
 
                             self.__quizzes[type.lower()].append(
-                                (json_config, python_code_snippet)
+                                (json_config, python_code_snippet, id_count, author)
                             )
 
                         except KeyError as e:
