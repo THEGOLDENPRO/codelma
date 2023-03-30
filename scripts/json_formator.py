@@ -1,7 +1,7 @@
 
 # -----------------<IMPORT MODULES>----------------- #
 
-from os import system
+from os import system, path, makedirs
 
 # --------------<FUNCTION DEFINITIONS>-------------- #
 
@@ -20,16 +20,34 @@ def default_start(fields, datatypes, types, available_tags):
     
     for field in fields[:Type_index + 1]: # iterrating through all the fields.
 
+        # asks for Author/Creator of the question
+        if field == "creator":
+            creator = input('\n' + 'creator' + ' :: ')
+
+            # checks if the user exists in the quizzes directory.
+            if path.exists(f'quizzes\\{creator}'):
+                default_data.append(creator)
+            # if not then asks if the user wants to create a new directory.
+            else:
+                choice = input(f"\nDo you want to create a new directory {creator}? y|n :: ")
+                
+                if choice.lower() in "yes":
+                    makedirs(f'quizzes\\{creator}')
+                    default_data.append(creator)
+                # Try Again.
+                else:
+                    return None
+        
         # asking the user the starting Id of the first question in mass adition.
         if field == "id":
-            uni_data = int(input('\n' + 'Starting ID' + ' :: '))
-            default_data.append(uni_data)
+            id = int(input('\n' + 'Starting ID' + ' :: '))
+            default_data.append(id)
 
         # defaulting omit_code value to false if not mentioned.    
         elif field == "omit_code": 
-            uni_data = input('\n' + field + ' :: ')
-            if uni_data != 'true': uni_data = "false"
-            default_data.append(uni_data)
+            omit = input('\n' + field + ' :: ')
+            if omit != 'true': uni_data = "false"
+            default_data.append(omit)
             
         # asking if user wants to enable tags for the quiz.
         elif field == "tags":
@@ -302,6 +320,9 @@ def start():
 
     # gather the default values if user permits.
     DEFAULTS = default_start(Fields, Fields_Datatypes, Types, Available_Tags) 
+    while DEFAULTS == None:
+        DEFAULTS = default_start(Fields, Fields_Datatypes, Types, Available_Tags) 
+        
 
     # Gather remaining data and format them into a json file adn writte them.
     while True:

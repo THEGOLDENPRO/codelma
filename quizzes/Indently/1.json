@@ -1,7 +1,5 @@
 {
-    "creator": "Indently",
-    "id": 1,
-    "omit_code": false,
+	"omit_code": false,
     "type": "multiple_choice",
     "question": "Where does the error occur?",
     "options": [

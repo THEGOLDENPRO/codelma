@@ -1,14 +1,13 @@
 {
-            "creator": "b001",
-            "id": 2,
-            "type": "multiple_choice",
-            "question": "What is the result of this code?",
-            "options": [
-                "[1, 2, 100]",
-                "[1, 2, 3]",
-                "[1, 100, 3]",
-                "[1, 2, 3, 100]"
-            ],
-            "answer": 1,
-            "difficulty": 1
-        }
+	"omit_code": false,
+    "type": "multiple_choice",
+    "question": "What is the result of this code?",
+    "options": [
+        "[1, 2, 100]",
+        "[1, 2, 3]",
+        "[1, 100, 3]",
+        "[1, 2, 3, 100]"
+    ],
+    "answer": 1,
+    "difficulty": 1
+}

@@ -1,6 +1,4 @@
 {
-	"creator": "_Wrayor",
-	"id": 12,
 	"omit_code": true,
 	"type": "multiple_choice",
 	"question": "Assume `Tup` is a tuple. Which of the following statements will result in an error?",

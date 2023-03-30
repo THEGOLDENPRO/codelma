@@ -1,7 +1,5 @@
 {
-    "creator": "Indently",
-    "id": 4,
-    "omit_code": false,
+	"omit_code": false,
     "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [

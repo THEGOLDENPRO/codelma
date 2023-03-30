@@ -1,6 +1,4 @@
 {
-	"creator": "_Wrayor",
-	"id": 24,
 	"omit_code": true,
 	"type": "true_false",
 	"question": "a stack is a LIFO structure.",
