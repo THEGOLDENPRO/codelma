@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 import json
 import urllib.parse
-from devgoldyutils import DictDataclass, LoggerAdapter
+from devgoldyutils import LoggerAdapter
 
 
 @dataclass
