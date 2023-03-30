@@ -1,7 +1,5 @@
 {
     "name": "ChatGPT",
     "description": "AI generated quizzes.",
-    "social_links": [
-        "https://chat.openai.com/chat"
-    ]
+    "social_link": "https://chat.openai.com/chat"
 }
