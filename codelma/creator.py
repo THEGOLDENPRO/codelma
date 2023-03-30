@@ -45,11 +45,9 @@ class Creator:
                     .split("#", 1)[0]
                 )
                 time.sleep(10)
-                channel_data = requests.get(f"https://banner.yt/@{handle}").json()
-                print(channel_data)
+                channel_data = requests.get(f"https://banner.yt/@{handle}", timeout=30).json()
                 channel_id = channel_data["channelId"]
                 self.icon = f"https://www.banner.yt/{channel_id}/avatar"
-                print(self.icon)
             else:
                 self.icon = (
                     "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"
