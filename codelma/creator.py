@@ -56,7 +56,7 @@ class Creator:
                     .split("?", 1)[0]
                     .split("#", 1)[0]
                 )
-                channel_data = requests.get(f"https://yt.lemnoslife.com/channels?cId=@{c_id}", timeout=30).json()
+                channel_data = requests.get(f"https://yt.lemnoslife.com/channels?cId={c_id}", timeout=30).json()
                 channel_id = channel_data["items"][0]["id"]
                 self.icon = f"https://www.banner.yt/{channel_id}/avatar"
             else:
