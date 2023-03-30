@@ -20,9 +20,13 @@ class Creator:
             data = json.load(file)
 
         self.name = data.get("name", self.id)
-        self.link = data.get("social_link", "https://google.com")
-        self.icon = "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"\
+        self.link = data.get("social_link")
+        if self.link:
+            self.icon = "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"\
             f"&fallback_opts=TYPE,SIZE,URL&url={urllib.parse.quote_plus(self.link)}&size=256"
+        else:
+            self.link = "https://github.com/THEGOLDENPRO/codelma"
+            self.icon = "https://github.com/THEGOLDENPRO/codelma/raw/master/assets/in_development.png"
 
 
 from . import codelma_logger
