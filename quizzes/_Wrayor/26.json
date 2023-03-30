@@ -1,0 +1,9 @@
+{
+	"creator": "_Wrayor",
+	"id": 26,
+	"omit_code": true,
+	"type": "true_false",
+	"question": "pop(item, stack) is a user-defined function of a stack, where the item is removed from the top of the stack.",
+	"answer": true,
+	"difficulty": 2
+}

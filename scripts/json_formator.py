@@ -39,7 +39,7 @@ def default_start(fields, datatypes, types, available_tags):
                     return None
         
         # asking the user the starting Id of the first question in mass adition.
-        if field == "id":
+        elif field == "id":
             id = int(input('\n' + 'Starting ID' + ' :: '))
             default_data.append(id)
 
@@ -208,10 +208,12 @@ def true_false(fields, datatypes, data):
     global Options_index
     
     data.append(input('\n' + 'question' + ' :: '))
-
-    fields.pop(Options_index) # removing the options field for true_false type.
-    datatypes.pop(Options_index) # removing the options datatype since options field not there.
-    datatypes[-2] = 'bool'
+    
+    if Options_Removed == False:
+        fields.pop(Options_index) # removing the options field for true_false type.
+        datatypes.pop(Options_index) # removing the options datatype since options field not there.
+        datatypes[-2] = 'bool'
+        Options_Removed = True   
 
     data.append(bool(input('\n' + 'answer' + ' :: ').title()))
     data.append(int(input('\n' + 'difficulty' + ' :: ')))
@@ -225,9 +227,11 @@ def text(fields, datatypes, data):
     
     data.append(input('\n' + 'question' + ' :: '))
 
-    fields.pop(Options_index) # removing the options field for text type.
-    datatypes.pop(Options_index) # removing the options datatype since options field not there.
-    datatypes[-2] = 'str' # datatype for fill up answer is a string.
+    if Options_Removed == False:
+        fields.pop(Options_index) # removing the options field for text type.
+        datatypes.pop(Options_index) # removing the options datatype since options field not there.
+        datatypes[-2] = 'str' # datatype for fill up answer is a string.
+        Options_Removed = True 
 
     data.append(input('\n' + 'answer' + ' :: ')) 
     data.append(int(input('\n' + 'difficulty' + ' :: ')))
@@ -301,9 +305,8 @@ def start():
     
     # global declaration of index values that get updated depending on whether tags exist or not.
     global Code_index, Tags_index, Type_index, Options_index
-    global Fields, Fields_Datatypes, Types, Available_Tags
+    global Fields, Fields_Datatypes, Types, Available_Tags, DEFAULTS, Options_Removed
     
-    Code_index = 2
     Tags_index = 3
     Type_index = 4
     Options_index = 6
@@ -317,17 +320,22 @@ def start():
     Available_Tags = ['list', 'str', 'dict', 'for', 'while', 'listcomp', 'dictcomp', 'eval',
                     'inlinestatements', 'func', 'nameing', 'syntax', 'scope']
 
+    Options_Removed = False
 
     # gather the default values if user permits.
-    DEFAULTS = default_start(Fields, Fields_Datatypes, Types, Available_Tags) 
+    DEFAULTS = None
+    
     while DEFAULTS == None:
         DEFAULTS = default_start(Fields, Fields_Datatypes, Types, Available_Tags) 
+    else:
+        Fixed_Fields, Fixed_Datatypes = DEFAULTS[3], DEFAULTS[4]
+
         
 
     # Gather remaining data and format them into a json file adn writte them.
     while True:
-        Field = DEFAULTS[3]
-        Fields_Datatypes = DEFAULTS[4]
+        Field = Fixed_Fields
+        Fields_Datatypes = Perma_Datatypes
         
         # Gather more data.
         __data__, __fields__, __datatypes__ = getter(Fields, Fields_Datatypes, Types, Available_Tags, DEFAULTS)
