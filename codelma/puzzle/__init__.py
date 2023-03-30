@@ -45,7 +45,7 @@ class Puzzle:
 
         quiz_embed.set_footer(
             text=f"""
-ID: {quiz.creator}/{quiz.id}
+ID: {quiz.creator.id}/{quiz.id}
 """
         )
 
