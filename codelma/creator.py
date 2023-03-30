@@ -25,18 +25,18 @@ class Creator:
         self.name = data.get("name", self.id)
         self.link = data.get("social_link")
         if self.link:
-            match_yt = re.match(
+            match_yt_channel = re.match(
                 "https?\:\/\/(www\.)?youtube\.com/channel/(.+)", self.link or "."
             )
             match_yt_handle = re.match(
                 "https?\:\/\/(www\.)?youtube\.com/@(.+)", self.link or "."
             )
-            match_yt_clink = re.match(
+            match_yt_c = re.match(
                 "https?\:\/\/(www\.)?youtube\.com/c/(.+)", self.link or "."
             )
-            if match_yt and match_yt.start != match_yt.end:
+            if match_yt_channel and match_yt_channel.start != match_yt_channel.end:
                 channel_id = (
-                    match_yt.string.split("youtube.com/channel", 1)[1]
+                    match_yt_channel.string.split("youtube.com/channel", 1)[1]
                     .split("?", 1)[0]
                     .split("#", 1)[0]
                 )
@@ -50,9 +50,9 @@ class Creator:
                 channel_data = requests.get(f"https://yt.lemnoslife.com/channels?handle=@{handle}", timeout=30).json()
                 channel_id = channel_data["items"][0]["id"]
                 self.icon = f"https://www.banner.yt/{channel_id}/avatar"
-            elif match_yt_clink and match_yt_clink.start != match_yt_clink.end:
+            elif match_yt_c and match_yt_c.start != match_yt_c.end:
                 c_id = (
-                    match_yt_clink.string.split("youtube.com/c/", 1)[1]
+                    match_yt_c.string.split("youtube.com/c/", 1)[1]
                     .split("?", 1)[0]
                     .split("#", 1)[0]
                 )
