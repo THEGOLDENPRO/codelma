@@ -32,7 +32,7 @@ class Creator:
                     .split("?", 1)[0]
                     .split("#", 1)[0]
                 )
-                self.icon = f"https://banner.yt/{channel_id}/avatar"
+                self.icon = f"https://www.banner.yt/{channel_id}/avatar"
                 print(self.icon)
             else:
                 self.icon = (
