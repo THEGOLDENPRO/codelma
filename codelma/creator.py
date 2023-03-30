@@ -3,8 +3,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 import json
 import re
+import time
 import urllib.parse
 from devgoldyutils import LoggerAdapter
+import requests
 
 
 @dataclass
@@ -26,12 +28,26 @@ class Creator:
             match_yt = re.match(
                 "https?\:\/\/(www\.)?youtube\.com/channel/(.+)", self.link or "."
             )
+            match_yt_handle = re.match(
+                "https?\:\/\/(www\.)?youtube\.com/@(.+)", self.link or "."
+            )
             if match_yt and match_yt.start != match_yt.end:
                 channel_id = (
                     match_yt.string.split("youtube.com/channel", 1)[1]
                     .split("?", 1)[0]
                     .split("#", 1)[0]
                 )
+                self.icon = f"https://www.banner.yt/{channel_id}/avatar"
+            elif match_yt_handle and match_yt_handle.start != match_yt_handle.end:
+                handle = (
+                    match_yt_handle.string.split("youtube.com/@", 1)[1]
+                    .split("?", 1)[0]
+                    .split("#", 1)[0]
+                )
+                time.sleep(10)
+                channel_data = requests.get(f"https://banner.yt/@{handle}").json()
+                print(channel_data)
+                channel_id = channel_data["channelId"]
                 self.icon = f"https://www.banner.yt/{channel_id}/avatar"
                 print(self.icon)
             else:
