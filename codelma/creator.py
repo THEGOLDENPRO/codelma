@@ -41,7 +41,7 @@ class Creator:
                 )
         else:
             self.link = "https://github.com/THEGOLDENPRO/codelma"
-            self.icon = "https://github.com/THEGOLDENPRO/codelma/raw/master/assets/in_development.png"
+            self.icon = "https://github.com/THEGOLDENPRO/codelma/raw/master/assets/placeholder_icon"
 
 
 from . import codelma_logger
