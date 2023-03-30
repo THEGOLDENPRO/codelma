@@ -1,6 +1,4 @@
 {
-    "creator": "programizstudios",
-    "id": 1,
     "omit_code": false,
     "type": "multiple_choice",
     "question": "How many times does the print statement execute in this python script?",

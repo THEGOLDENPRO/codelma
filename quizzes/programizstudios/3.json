@@ -1,6 +1,4 @@
 {
-    "creator": "programizstudios",
-    "id": 3,
     "omit_code": false,
     "type": "multiple_choice",
     "question": "What is printed by this python script?",
