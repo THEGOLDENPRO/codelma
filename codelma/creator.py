@@ -25,16 +25,23 @@ class Creator:
         self.name = data.get("name", self.id)
         self.link = data.get("social_link")
         if self.link:
+            match_gh = re.match(
+                "https?://(www\.)?github\.com/.+", self.link
+            )
             match_yt_channel = re.match(
-                "https?\:\/\/(www\.)?youtube\.com/channel/(.+)", self.link or "."
+                "https?://(www\.)?youtube\.com/channel/.+", self.link
             )
             match_yt_handle = re.match(
-                "https?\:\/\/(www\.)?youtube\.com/@(.+)", self.link or "."
+                "https?://(www\.)?youtube\.com/@.+", self.link
             )
             match_yt_c = re.match(
-                "https?\:\/\/(www\.)?youtube\.com/c/(.+)", self.link or "."
+                "https?://(www\.)?youtube\.com/c/.+", self.link
             )
-            if match_yt_channel and match_yt_channel.start != match_yt_channel.end:
+            if match_gh and match_gh.start != match_gh.end:
+                username = match_gh.string.rsplit("/", 1)[1]
+                userdata = requests.get(f"https://api.github.com/users/{username}").json()
+                self.icon = userdata["avatar_url"]
+            elif match_yt_channel and match_yt_channel.start != match_yt_channel.end:
                 channel_id = (
                     match_yt_channel.string.split("youtube.com/channel", 1)[1]
                     .split("?", 1)[0]
