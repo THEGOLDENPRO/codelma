@@ -60,7 +60,7 @@ class Codelma:
 
         # Caching creator metadata
         for creator in os.listdir("./creators"):
-            creator_id = creator.removesuffix(".json")
+            creator_id = os.path.splitext(creator)[0] # I swapped ".removesuffix" with this as it broke support for python versions below 3.9.
             self.logger.debug(
                 Colours.PINK_GREY.apply_to_string(
                     f"Loading creator metatada {creator_id}..."
