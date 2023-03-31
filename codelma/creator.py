@@ -39,7 +39,7 @@ class Creator:
             )
             if match_gh and match_gh.start != match_gh.end:
                 username = match_gh.string.rsplit("/", 1)[1]
-                userdata = requests.get(f"https://api.github.com/users/{username}").json()
+                userdata = requests.get(f"https://api.github.com/users/{username}", timeout=30).json()
                 self.icon = userdata["avatar_url"]
             elif match_yt_channel and match_yt_channel.start != match_yt_channel.end:
                 channel_id = (
