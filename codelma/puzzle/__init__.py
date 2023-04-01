@@ -52,6 +52,7 @@ ID: {quiz.creator.id}/{quiz.id}
         await self.send_quiz(quiz_embed, quiz)
 
     async def send_quiz(self, embed: nextcord.Embed, quiz: Quiz):
+        self.logger.debug(f"Sending quiz '{quiz.creator.name}/{quiz.id}'...")
 
         if quiz.type == QuizTypes.TRUE_FALSE.name.lower():
             view = views.TrueFalse(self.interaction.user, quiz.answer)
