@@ -5,6 +5,7 @@ from dataclasses import dataclass, field
 from devgoldyutils import DictDataclass, LoggerAdapter
 
 from .quiz_types import QuizTypes
+from .creator import Creator
 
 @dataclass
 class Quiz(DictDataclass):
@@ -12,7 +13,7 @@ class Quiz(DictDataclass):
     python_snippet:str|None
 
     id:int
-    creator:str
+    creator:Creator
 
     type:str = field(init=False)
     question:str = field(init=False)
