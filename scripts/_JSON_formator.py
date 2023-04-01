@@ -1,4 +1,6 @@
 
+# This is the default dictionary that will be modified every iteration of adding a question.
+
 JSON_DICT = {
     "omit_code": False,    # 0
     "tags": [],            # 1
@@ -10,10 +12,18 @@ JSON_DICT = {
 
 }
 
+# =========<IMPORTS>========= #
+
 from os import system, path, makedirs, listdir, getcwd
+from json import dump
+
+# =========<FUNCTIONS>========= #
+
+### the getter(JSON_DICT) function gathers the data of the question and modifies the given Dictionary.
 
 def getter(JSON_DICT):
-
+    
+    # clear the console.
     system("cls")
     
 # =========<VARIABLES>========= #
@@ -25,49 +35,67 @@ def getter(JSON_DICT):
 
 # =========<USERDATA>========= #
 
+    # asks user for creator name.
     CREATOR = input("\ncreator :: ")
     
     # checks if the user exists in the quizzes directory.
     if path.exists(f'quizzes\\{CREATOR}'):
         pass
+    
     # if not then asks if the user wants to create a new directory.
     else:
         choice = input(f"\nDo you want to create a new directory {CREATOR}? [y|n] :: ")
         
+        # if choice is in yes, then add the new directory.
         if choice.lower() in "yes":
             makedirs(f'quizzes\\{CREATOR}')
 
+    # ask for ID as an integer.
     while True:
 
+        # find the last known ID in the creator's directory.
         Last_ID = str(sorted(listdir(f'quizzes\\{CREATOR}\\'), key=len)[-1])[:-5]
 
+        # show the last known ID for the user to
+        # not make a mistake in overwriting an existing file.
         print("Last known ID :", Last_ID)
+
+        # ask for ID as int.
         ID = input("id {int} ::  ")
-        try:
-            ID = int(ID)
+        
+        try: # try converting ID to integer
+            ID = int(ID) 
             break
 
-        except ValueError:
+        except ValueError: # if it returns a value error, then inform the user of the rules.
             print("\nThe ID can only be an integer.")
             ID = int(input("\nRe-enter the ID of the question :: "))
 
 
 # =========<OMIT_CODE>========= #
 
+    # ask the user if they want to exclude code from the question.
     omit_code = input('\n' + "omit_code [true|false]" + ' :: ').title()
+
+    # if the user enters anything except 'true' then omit_code = False, else it is True
     if omit_code not in 'True':
         omit_code = False
     else:
         omit_code = True
 
+    # modify the value in the dictionary.
     JSON_DICT["omit_code"] = omit_code    
+
+    # inform the user of the change.
     print(f'<<< Omit_code set to : {omit_code} >>>')
 
 
 # ===========<TAGS>=========== #
-            
+
+    # ask the user if they want to have tags for the question. 
     if input("\nDo you want to enable tags? [y|n] :: ").lower() not in 'yes':
-        try:
+        
+        try: # if yes then, 
             JSON_DICT.pop("tags")
             print("<<< Tags set to : Disabled >>>")
         except Exception: print("'tags' field not available.")
@@ -197,12 +225,11 @@ def getter(JSON_DICT):
         answer = False
         print("\nGive the answer of this question {boolean}:\n" + JSON_DICT["question"])
       
-        while True:
+        while answer not in (True, False):
             answer = input('\n' + "Answer {bool} :: ").title()
             try:
                 answer = bool(answer)
-                break
-                if answer not in [True, False]:
+                if answer not in (True, False):
                     print("Answer must be a boolean [true|false]:")
             except ValueError:
                 print("Answer must be a boolean [true|false]:")
