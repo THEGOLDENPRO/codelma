@@ -210,36 +210,49 @@ def getter(JSON_DICT):
             except ValueError:# show user: must be integer error.
                 print("Sorry you can only have integers as total options!")
 
+        # inform the user that they can make mistakes like a human and that they don't have to worry.
         print("\nType the options carefully,\nyou don't wanna go through the hassle of editing\nbut, don't worry if you did make a mistake\nyou can re-edit through an editor\nat the end of adding all the options\n")
+
+        # take options.
         for optnum in range(total):
             option = input(f'option {optnum + 1} :: ') 
             options.append(option)
 
 # =======<EDIT_OPTIONS>======== #
 
+        # ask if the user has made a mistake and wants to edit the options.
         re_edit = input("\nDo you want to make changes\nto the addded options? [y|n] :: ").lower()
 
-        while re_edit in 'yes':
+        while re_edit in 'yes': # if yes then show them the options
             for _index, _opt in enumerate(options):
                 print(f"[{_index}] : {_opt}")
 
-            index = None
+            index = None # temporary initiation
+            # keep asking for which option to edit if the user is addament on not choosing proper options.
             while index not in tuple(range(len(options))):
-
+                
+                # ask for index of the option.
                 index = input("\nEnter the index of the option you want to edit {int} :: ")
-                try:
+                
+                try: # try to convert to int if not then
                     index = int(index)
                     if index not in tuple(range(len(options))):
                         print("Index Out of Range, Try Again!")
                 
-                except ValueError:
+                except ValueError: # show user: must be integer error.
                     print("\nThe index can only be an integer and in between", tuple(range(len(options))))
                     index = int(input("\nRe-enter the index of the option you want to edit"))
 
+            # get the edit.
             option = input(f"Editing [{index}] Option :: ")
+
+            # make changes with the options list
             options[index] = option
+
+            # ask if the user wants correct any more mistakes.
             re_edit = input("\nDo you want to make more\nchanges to the addded options? [y|n] :: ").lower()
 
+        # modify the variable in the dictionary.
         JSON_DICT["options"] = options
 
 # ==========<ANSWER>========== #
@@ -247,189 +260,154 @@ def getter(JSON_DICT):
     if JSON_DICT["type"] == types[0]: ############ multiple_choice ############
         answer = -1
 
-        print("\nGive the answer of this question {index}:\n" + f'JSON_DICT["question"]')
+        # ask user for the answer of their question.
+        print("\nGive the answer of this question {index}:\n" + f'{JSON_DICT["question"]}')
+        # also show options for multiple choice types
         for _index, _opt in enumerate(JSON_DICT["options"]):
             print(f"[{_index}] : {_opt}")
 
+        # keep asking the dumb user to give their answer to the question.
         while answer not in tuple(range(len(JSON_DICT["options"]))):
+
+            # ask for answer
             answer = input('\n' + "Answer {int} :: ")
             try:
                 answer = int(answer)
+
+                # show user: index out of range.
                 if answer not in tuple(range(len(JSON_DICT["options"]))):
                     print("Index Out of Range, Try Again!")
-            
+
+            # show user: must be integer error.
             except ValueError:
                 print("\nThe index can only be an integer and in between", tuple(range(len(options))))
-                answer = int(input("\nRe-enter the index of the answer :: "))
+
+        # modify the variable in the dictionary.
         JSON_DICT["answer"] = answer
+
+        # infor mthe user of the change.
         print(f"<<< Answer set to : {answer} >>>")
 
-    
+
     elif JSON_DICT["type"] == types[1]: ############ true_false ############
         answer = False
+        # ask user for the answer of their question.
         print("\nGive the answer of this question {boolean}:\n" + JSON_DICT["question"])
       
+        # keep asking the user to give the answer to the question.
         while answer not in (True, False):
             answer = input('\n' + "Answer {bool} :: ").title()
             try:
                 answer = bool(answer)
+                # show user: must be a boolean error
                 if answer not in (True, False):
                     print("Answer must be a boolean [true|false]:")
+            # show user: must be a boolean error
             except ValueError:
                 print("Answer must be a boolean [true|false]:")
-        
+                
+        # modify the variable in the dictionary.
+        JSON_DICT["answer"] = answer
+
+        # infor mthe user of the change.
         print(f"<<< Answer set to : {answer} >>>")
                     
     elif JSON_DICT["type"] == types[2]: ############ text ############
+
+        # ask the user of the answer to the question.
         answer = input("\nGive the answer of this question {string}:\n" + JSON_DICT["question"] + " : Answer :: ")
+        # ask the user if they are hundred percent sure.
         choice = input("\nAre you sure of this answer? [y|n] :: ")
+        
         while choice.lower() != 'y':
+            # give user another try.
             answer = input("\nRewrite the answer of this question {string}:\n" + JSON_DICT["question"] + " : Answer :: ")
+            # ask for confirmation again.
             choice = input("\nAre you sure of this answer? [y|n] :: ")
         else:
+            # modify the variable in the dictionary.
             JSON_DICT["answer"] = answer
+
+            # infor mthe user of the change.
             print(f"<<< Answer set to : {answer} >>>")
 
 # ==========<DIFFICULTY>========== #
 
+    # temporarily set difficulty to be 0
     difficulty = 0
-    
+
+    # keep asking for difficulty unless they put the valid integer.
     while difficulty not in range(1,6):
-        try:
+        
+        try: # ask the user of the difficulty of their question.
             difficulty = int(input('\n' + "difficulty {int} :: "))
+
+            # show user: difficulty invalid error and give info about various levels.
             if difficulty not in range(1,6):
                 print("\nDifficulty must range from 1 - 5:\n1 => just started learning python.\n2 => few weeks into python (2 - 7 weeks)\n3 => Average Python Developer\n4 => Advanced Python User\n5 => Veteran Python Hunters")
+
+        # show user : must be integer error.
         except ValueError:
             print("Sorry you can only have integer as difficulty!")
     else:
+        # mdify the variable in the dictionary
         JSON_DICT["difficulty"] = difficulty
+
+        # inform the user of the changes.
         print(f"<<< Difficulty set to : {difficulty} >>>")
 
+    # return required data.
     return JSON_DICT, (CREATOR, ID)
 
+### json_dump(JSON_DICT, USER_DATA) function takes in a dictionary and creator, ID of the file and
+### writes a json file from them, if the omit code is false then it also writes a temporary .py file of same ID.
 
+def json_dump(JSON_DICT, USER_DATA):
 
+    system("cls") # clear the console
 
-
-def setter(JSON_DICT):
-
-    types = ['multiple_choice', 'true_false', 'text']
-    
-    JSON_FILE = "{"
-    
-    for index, field in enumerate(JSON_DICT.keys()):
-        if field == 'omit_code':
-            JSON_FILE += '\n\t' + '"omit_code"' + ': ' + str(JSON_DICT[field]).lower()
-            if index != (len(JSON_DICT.keys()))-1:
-                JSON_FILE += ','
-
-        elif field == 'tags':
-            temp_string = '[\n\t\t'
-            if JSON_DICT[field] == []:
-                temp_string = "[]"
-            else:
-                # clean style
-                for _index, tag in enumerate(JSON_DICT[field]):
-                    
-                    if _index != (len(JSON_DICT[field])-1):
-                        temp_string += f'"{tag}",\n\t\t'
-                        
-                    else:
-                        temp_string += f'"{tag}"\n\t]'
-
-            
-            JSON_FILE += '\n\t' + '"tags"' + ': ' + temp_string
-            if index != (len(JSON_DICT.keys()))-1:
-                JSON_FILE += ','
-            
-        elif field == 'type':
-            JSON_FILE += '\n\t' + '"type"' + ': ' + f'"{JSON_DICT[field]}"'
-            if index != (len(JSON_DICT.keys()))-1:
-                JSON_FILE += ','
-
-        elif field == 'question':
-            JSON_FILE += '\n\t' + '"question"' + ': ' + f'"{JSON_DICT[field]}"'
-            if index != (len(JSON_DICT.keys()))-1:
-                JSON_FILE += ','
-
-        elif field == 'options':
-            temp_string = '[\n\t\t'
-            if JSON_DICT[field] == []:
-                temp_string = "[]"
-            else:
-                # clean style
-                for _index, option in enumerate(JSON_DICT[field]):
-                    
-                    if _index != (len(JSON_DICT[field])-1):
-                        temp_string += f'"{option}",\n\t\t'
-                        
-                    else:
-                        temp_string += f'"{option}"\n\t]'
-
-            
-            JSON_FILE += '\n\t' + '"options"' + ': ' + temp_string
-            if index != (len(JSON_DICT.keys()))-1:
-                JSON_FILE += ','
-
-        elif field == 'answer':
-
-            if JSON_DICT["type"] == types[0]:
-                JSON_FILE += '\n\t' + '"answer"' + ': ' + str(JSON_DICT[field])
-                if index != (len(JSON_DICT.keys()))-1:
-                    JSON_FILE += ','
-
-            elif JSON_DICT["type"] == types[1]:
-                JSON_FILE += '\n\t' + '"answer"' + ': ' + str(JSON_DICT[field]).lower()
-                if index != (len(JSON_DICT.keys()))-1:
-                    JSON_FILE += ','
-
-            elif JSON_DICT["type"] == types[2]:
-                JSON_FILE += '\n\t' + '"answer"' + ': ' + f'"{JSON_DICT[field].lower()}"'
-                if index != (len(JSON_DICT.keys()))-1:
-                    JSON_FILE += ','
-
-        elif field == 'difficulty':
-            JSON_FILE += '\n\t' + '"difficulty"' + ': ' + str(JSON_DICT[field])
-            if index != (len(JSON_DICT.keys()))-1:
-                JSON_FILE += ','
-        
-    JSON_FILE += '\n}'
-    
-    return JSON_FILE
-
-
-
-def json_writer(JSON_FILE, USER_DATA, JSON_DICT):
-
+    # open the file with creator and ID at specified directory and create a .json file if not exist.
     with open(f"quizzes\\{USER_DATA[0]}\\{USER_DATA[1]}.json", 'w') as File:
 
-        try:
-            File.writelines(JSON_FILE)
+        try: # tries to write the dictionary into the json file with indent of 4 spaces.
+            dump(JSON_DICT, File, indent=4)
+            # notify success if done so.
             print(".json File written!")
 
         except Exception:
+            # notify failure if not.
             print(".json File not written!")
 
+    # if the question has omit code set to false then create a temporary .py file for user to edit.
     if JSON_DICT["omit_code"] == False:
 
+        # open the file with creator and ID at specified directory and create a json file if not exist.
         with open (f"quizzes\\{USER_DATA[0]}\\{USER_DATA[1]}.py", 'w') as File:
                 
-            try:
+            try: # try to write comments into the py file.
                 File.writelines(["### Python File to be written ###","### Remove these comments once file is written onto ###"])
+                # inform the user file has been created to be edited.
                 print(".py File ready to be edited!")
 
             except Exception:
+                # if not, show failure.
                 print(".py File not written!")
-
-while True:
     
+
+# loop these indefinitely unless user asks to leave.
+while True:
+
+    # gather question data from getter() function.
     json_dict, user_data = getter(JSON_DICT)
+
+    # if the user made a mistake in creator key, then restart.
     if json_dict == None:
         continue
 
-    json_file = setter(json_dict)
+    # write the gathered data into the specified file(s).
+    json_dump(json_dict, user_data)
 
-    json_writer(json_file, user_data, json_dict)
-
+    # ask the user if they want to leave adding questions.
     if input("Do you want to continue adding questions? [y|n] :: ").lower() not in 'yes':
+        # if yes then break out of the loop.
         break
