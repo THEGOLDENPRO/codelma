@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 import json
 import re
-import time
 import urllib.parse
 from devgoldyutils import LoggerAdapter
 import requests
