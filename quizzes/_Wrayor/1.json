@@ -3,10 +3,10 @@
     "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [
-        "<class 'int'>\n<class 'tuple'>",  
-        "<class 'int'>\n<class 'int'>",
-        "<class 'tuple'>\n<class 'int'>", 
-        "<class 'tuple'>\n<class 'tuple'"
+        "<class 'int'><class 'tuple'>",  
+        "<class 'int'><class 'int'>",
+        "<class 'tuple'><class 'int'>", 
+        "<class 'tuple'><class 'tuple'>"
     ],
     "answer": 2,
     "difficulty": 2

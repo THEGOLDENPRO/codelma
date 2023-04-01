@@ -1,7 +1,7 @@
 {
 	"omit_code": true,
 	"type": "text",
-	"question": "___() function is used to arrange elements of a list in ascending order.",
+	"question": "___ () function is used to arrange elements of a list in ascending order.",
 	"answer": "sort",
 	"difficulty": 2
 }

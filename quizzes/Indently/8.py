@@ -1,4 +1,4 @@
-list01 = ['0ne 1'
+list01 = ['One 1'
           'Two 2'
           'Three 3'
           'Four 4'
