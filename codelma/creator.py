@@ -25,16 +25,16 @@ class Creator:
         self.link = data.get("social_link")
         if self.link:
             match_gh = re.match(
-                "https?://(www\.)?github\.com/.+", self.link
+                r"https?://(www\.)?github\.com/.+", self.link
             )
             match_yt_channel = re.match(
-                "https?://(www\.)?youtube\.com/channel/.+", self.link
+                r"https?://(www\.)?youtube\.com/channel/.+", self.link
             )
             match_yt_handle = re.match(
-                "https?://(www\.)?youtube\.com/@.+", self.link
+                r"https?://(www\.)?youtube\.com/@.+", self.link
             )
             match_yt_c = re.match(
-                "https?://(www\.)?youtube\.com/c/.+", self.link
+                r"https?://(www\.)?youtube\.com/c/.+", self.link
             )
             if match_gh and match_gh.start != match_gh.end:
                 username = match_gh.string.rsplit("/", 1)[1]
