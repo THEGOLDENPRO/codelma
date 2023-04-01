@@ -157,7 +157,7 @@ def text():
     for field in FIELDS:
         if field == "question":
             user_que = input(f"\n{field}  :: ")
-            while "___" not in user_que:
+            while user_que.count("___") != 1:
                 print('\nInvalid Text Question! Please add a "___" signifying a blank in text questions.')
                 user_que = input(f"\n{field}  :: ")
             CURRENT_DATA[field] = user_que
