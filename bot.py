@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import nextcord
+import random
 from nextcord.ext import commands
 from decouple import config
 from devgoldyutils import Colours, LoggerAdapter
@@ -30,13 +31,14 @@ async def solve(
         name = "quiz_type",
         choices = {
             "Multiple Choice": 0, 
-            "True or False": 1
+            "True or False": 1,
+            "Text Input": 2,
         }, 
         required = False)
     ):
 
     if type is None:
-        type = 0
+        type = random.choice(list(QuizTypes)).value
     
     quiz_type = QuizTypes(type)
 

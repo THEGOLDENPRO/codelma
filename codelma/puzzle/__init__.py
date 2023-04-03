@@ -67,3 +67,10 @@ ID: {quiz.creator.id}/{quiz.id}
             await self.interaction.send(embed=embed, view=view)
 
             return await view.wait()
+
+        if quiz.type == QuizTypes.TEXT.name.lower():
+            view = views.Text(self.interaction.user, quiz.answer)
+
+            await self.interaction.send(embed=embed, view=view)
+
+            return await view.wait()

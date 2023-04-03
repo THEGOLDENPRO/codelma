@@ -27,5 +27,5 @@ class MultiChoiceButton(nextcord.ui.Button):
     async def callback(self, interaction: nextcord.Interaction) -> None:
         view:MultiChoice = self.view
 
-        await view.is_answer_correct(self, interaction, self.label)
+        await view.is_answer_correct(interaction, self.label)
         

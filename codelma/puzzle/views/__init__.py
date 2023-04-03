@@ -14,7 +14,7 @@ class PuzzleView(nextcord.ui.View):
 
     # Answer checker.
     # ----------------
-    async def is_answer_correct(self, button: nextcord.ui.Button, interaction: nextcord.Interaction, answer):
+    async def is_answer_correct(self, interaction: nextcord.Interaction, answer):
         if self.author.id == interaction.user.id:
             if answer == self.correct_answer:
                 msg = "✅ Your answer is correct!"
@@ -55,3 +55,4 @@ class PuzzleView(nextcord.ui.View):
 
 from .true_false import TrueFalse
 from .multi_choice import MultiChoice
+from .text import Text
