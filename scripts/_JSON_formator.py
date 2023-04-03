@@ -1,16 +1,16 @@
 
 # This is the default dictionary structure
 
-JSON_DICT = {
-    "omit_code": False,    # 0
-    "tags": [],            # 1
-    "type": "",            # 2
-    "question": "",        # 3
-    "options": [],         # 4
-    "answer": 0,           # 5
-    "difficulty": 0        # 6
+# JSON_DICT = {
+#     "omit_code": False,    
+#     "tags": [],            
+#     "type": "",            
+#     "question": "",        
+#     "options": [],         
+#     "answer": 0,           
+#     "difficulty": 0        
 
-}
+# }
 
 default = False
 default_list = []
@@ -24,7 +24,7 @@ from json import dump
 
 ### the getter(JSON_DICT) function gathers the data of the question and modifies the given Dictionary.
 
-def getter(JSON_DICT):
+def getter():
 
     global default, default_list
     
@@ -39,6 +39,8 @@ def getter(JSON_DICT):
                     'inlinestatements', 'func', 'naming', 'syntax', 'scope']    
 
     new_dir = False
+
+    JSON_DICT = {}
 
 # =========<USERDATA>========= #
 
@@ -202,11 +204,6 @@ def getter(JSON_DICT):
 
     # if type is either `true_false` or `text` then remove "options" key from the dictionary.
     if JSON_DICT["type"] == 'true_false' or JSON_DICT["type"] == 'text':
-        try:
-            JSON_DICT.pop("options")
-        except KeyError:
-            pass
-        
         # inform the user of the change
         print(f"<<< Options set to : Disabled >>>")
 
@@ -319,7 +316,7 @@ def getter(JSON_DICT):
 
 
     elif JSON_DICT["type"] == types[1]: ############ true_false ############
-        answer = False
+        answer = None # temporary value
         # ask user for the answer of their question.
         print("\nGive the answer of this question {boolean}:\n" + JSON_DICT["question"])
       
@@ -427,7 +424,7 @@ def json_dump(JSON_DICT, USER_DATA):
 while True:
 
     # gather question data from getter() function.
-    json_dict, user_data = getter(JSON_DICT)
+    json_dict, user_data = getter()
 
     # if the user made a mistake in creator key, then restart.
     if json_dict == None:
