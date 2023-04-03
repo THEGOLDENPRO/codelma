@@ -3,5 +3,6 @@
 	"type": "text",
 	"question": "___ is a number of tuples in a relation. {Reference to Databases}",
 	"answer": "Cardinality",
-	"difficulty": 3
+	"difficulty": 3,
+	"error_range": 2
 }
