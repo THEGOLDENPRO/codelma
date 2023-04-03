@@ -1,5 +1,5 @@
 
-# This is the default dictionary that will be modified every iteration of adding a question.
+# This is the default dictionary structure
 
 JSON_DICT = {
     "omit_code": False,    # 0
@@ -12,6 +12,9 @@ JSON_DICT = {
 
 }
 
+default = False
+default_list = []
+
 # =========<IMPORTS>========= #
 
 from os import system, path, makedirs, listdir, getcwd
@@ -22,6 +25,8 @@ from json import dump
 ### the getter(JSON_DICT) function gathers the data of the question and modifies the given Dictionary.
 
 def getter(JSON_DICT):
+
+    global default, default_list
     
     # clear the console.
     system("cls")
@@ -37,57 +42,78 @@ def getter(JSON_DICT):
 
 # =========<USERDATA>========= #
 
-    # asks user for creator name.
-    CREATOR = input("\ncreator :: ")
-    
-    # checks if the user exists in the quizzes directory.
-    if path.exists(f'quizzes\\{CREATOR}'):
-        pass
-    
-    # if not then asks if the user wants to create a new directory.
-    else:
-        choice = input(f"\nDo you want to create a new directory {CREATOR}? [y|n] :: ")
+    if default == False:
+        # asks user for creator name.
+        CREATOR = input("\nEnter the username :: ")
         
-        # if choice is in yes, then add the new directory.
-        if choice.lower() in "yes":
-            makedirs(f'quizzes\\{CREATOR}')
-            new_dir = True
+        # checks if the user exists in the quizzes directory.
+        if path.exists(f'quizzes\\{CREATOR}'):
+            pass
+        
+        # if not then asks if the user wants to create a new directory.
         else:
-            return None, None
+            choice = input(f"\nDo you want to create a new directory {CREATOR}? [y|n] :: ")
+            
+            # if choice is in yes, then add the new directory.
+            if choice.lower() in "yes":
+                makedirs(f'quizzes\\{CREATOR}')
+                new_dir = True
+            else:
+                return None, None
 
-    # ask for ID as an integer.
-    while True:
+        # ask for ID as an integer.
+        while True:
 
-        # find the last known ID in the creator's directory.
-        if new_dir != True: Last_ID = str(sorted(listdir(f'quizzes\\{CREATOR}\\'), key=len)[-1])[:-5]
-        else: Last_ID = 0
+            # find the last known ID in the creator's directory.
+            try:
+                if new_dir != True: Last_ID = str(sorted(listdir(f'quizzes\\{CREATOR}\\'), key=len)[-1])[:-5]
+                else: Last_ID = 0
 
-        # show the last known ID for the user to
-        # not make a mistake in overwriting an existing file.
-        print("Last known ID :", Last_ID)
+                # show the last known ID for the user to
+                # not make a mistake in overwriting an existing file.
+                print("Last known ID :", Last_ID)
+            except IndexError:
+                print('Last known ID : ERROR')
 
-        # ask for ID as int.
-        ID = input("id {int} ::  ")
+            # ask for ID as int.
+            ID = input("Enter the id of the question {int} ::  ")
+            
+            try: # try converting ID to integer
+                ID = int(ID) 
+                break
+
+            except ValueError: # show user: must be integer error and ask for input again.
+                print("\nThe ID can only be an integer.")
+                ID = int(input("\nRe-enter the ID of the question :: "))
+
+        # ask the useer if they'd want to set creator and id's to defaults.
+        default = input("\nDo you want enable these as default values? [y|n] :: ")
+
+        # if yes then change some vairables
+        if default in 'yes':
+            default = True
+
+            # inform the user of the mode having being enabled
+            # permanently unles user exists the script.
+            print("<<< DEFAULT MODE : ENABLED >>>")
+            default_list = [CREATOR, ID]
+    else:
+        CREATOR, ID = default_list
+
+        # for every iteration: increment the ID value
+        ID += 1
         
-        try: # try converting ID to integer
-            ID = int(ID) 
-            break
-
-        except ValueError: # show user: must be integer error and ask for input again.
-            print("\nThe ID can only be an integer.")
-            ID = int(input("\nRe-enter the ID of the question :: "))
-
 
 # =========<OMIT_CODE>========= #
 
     # ask the user if they want to exclude code from the question.
-    omit_code = input('\nomit_code [true|false] :: ').title()
+    omit_code = input('\nDoes your question have code snippet? [true|false] :: ').title()
 
     # if the user enters anything except 'true' then omit_code = False, else it is True
     if omit_code not in 'True':
-        omit_code = False
-    else:
         omit_code = True
+    else:
+        omit_code = False
 
     # modify the value in the dictionary.
     JSON_DICT["omit_code"] = omit_code    
@@ -176,8 +202,11 @@ def getter(JSON_DICT):
 
     # if type is either `true_false` or `text` then remove "options" key from the dictionary.
     if JSON_DICT["type"] == 'true_false' or JSON_DICT["type"] == 'text':
-        JSON_DICT.pop("options")
-
+        try:
+            JSON_DICT.pop("options")
+        except KeyError:
+            pass
+        
         # inform the user of the change
         print(f"<<< Options set to : Disabled >>>")
 
@@ -190,8 +219,8 @@ def getter(JSON_DICT):
     JSON_DICT["question"] = question
 
     # if the type is of `text`, then check if a blank ahs been provide if not inform the user of the requirement.
-    while JSON_DICT["type"] == "text" and "___" not in JSON_DICT["question"].split():
-        print("Sorry you missed adding a fill up blank {' ___ '} in your question\nthat is no more or less than exactly three consecutive underscores.\nMake sure there are spaces around it!")
+    while JSON_DICT["type"] == "text" and JSON_DICT["question"].count(" ___ ") != 1:
+        print("Sorry you missed adding a fill up blank {' ___ '} in your question\nthat is no more or less than exactly three consecutive underscores.\nMake sure there are spaces around it! Only one fill up currently supported")
         # give user another try at writing the question.
         JSON_DICT["question"] = input('\nQuestion :: ')
 
