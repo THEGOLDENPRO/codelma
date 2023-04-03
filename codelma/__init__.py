@@ -9,9 +9,11 @@ from typing import Dict, Tuple, List
 from devgoldyutils import Colours, add_custom_handler, LoggerAdapter
 
 codelma_logger = add_custom_handler(
-    log.getLogger(Colours.PINK_GREY.apply_to_string("CODELMA"))
-)
-codelma_logger.setLevel(getattr(log, config("LOG_LEVEL", default="INFO")))
+    logger = log.getLogger(Colours.PINK_GREY.apply_to_string("CODELMA")),
+    level = getattr(log, config("LOG_LEVEL", default="INFO"))
+) 
+# NOTICE: If this errors makes sure to UPDATE devgoldyutils to it's latest version (v2.4.3 or above is required now).
+# Run this to update: pip install -r requirements.txt -U
 
 from .quiz import Quiz
 from .creator import Creator

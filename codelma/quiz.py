@@ -26,7 +26,7 @@ class Quiz(DictDataclass):
 
         self.type = self.get("type")
         self.question = self.get("question")
-        self.options = (lambda: None if self.type == QuizTypes.TRUE_FALSE.name.lower() else self.get("options"))()
+        self.options = self.get("options", optional=True)
         self.answer = self.get("answer")
 
 

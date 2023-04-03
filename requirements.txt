@@ -1,4 +1,4 @@
 requests
 nextcord>=2.4.1
 python-decouple>=3.7
-devgoldyutils>=2.3.9
+devgoldyutils>=2.4.3
