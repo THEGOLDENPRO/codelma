@@ -3,6 +3,6 @@
 	"type": "text",
 	"question": "___ operators are those operators who compare two values.",
 	"answer": "arithmetic",
-	"difficulty": 1,
-	"error_range": 2
+	"error_range": 2,
+	"difficulty": 1
 }

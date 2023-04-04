@@ -2,14 +2,14 @@
 # This is the default dictionary structure
 
 # JSON_DICT = {
-#     "omit_code": False,    
-#     "tags": [],            
+#     "omit_code": False,   {optional}
+#     "tags": [],           {optional}
 #     "type": "",            
 #     "question": "",        
-#     "options": [],         
+#     "options": [],        {`multiple_choice` type exclusive}
 #     "answer": 0,           
-#     "difficulty": 0        
-
+#     "error_range": 0,     {`text` type exclusive}
+#     "difficulty": 0       {can only be from 1 - 5}
 # }
 
 default = False
@@ -356,6 +356,16 @@ def getter():
 
             # infor mthe user of the change.
             print(f"<<< Answer set to : {answer} >>>")
+
+        error_range = input(f"How many errors for the answer " + f'{JSON_DICT["answer"]}.'+ "\nCan the quizzer make {int} ::  ")
+        
+        try: # try converting error_range to integer
+            error_range = int(error_range) 
+            break
+
+        except ValueError: # show user: must be integer error and ask for input again.
+            print("\nThe number of errors can only be an integer.")
+            ID = int(input("\nRe-enter the number of errors allowed for the answer :: "))
 
 # ==========<DIFFICULTY>========== #
 

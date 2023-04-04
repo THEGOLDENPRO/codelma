@@ -3,6 +3,6 @@
 	"type": "text",
 	"question": "The ___ statement exits the current loop and goes to the next iteration of it.",
 	"answer": "continue",
-	"difficulty": 2,
-	"error_range": 0
+	"error_range": 0,
+	"difficulty": 2
 }
