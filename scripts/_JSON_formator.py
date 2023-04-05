@@ -86,7 +86,7 @@ def getter():
 
             except ValueError: # show user: must be integer error and ask for input again.
                 print("\nThe ID can only be an integer.")
-                ID = int(input("\nRe-enter the ID of the question :: "))
+                ID = input("\nRe-enter the ID of the question :: ")
 
         # ask the useer if they'd want to set creator and id's to defaults.
         default = input("\nDo you want enable these as default values? [y|n] :: ")
@@ -323,8 +323,13 @@ def getter():
         # keep asking the user to give the answer to the question.
         while answer not in (True, False):
             answer = input('\n' + "Answer {bool} :: ").title()
+            
             try:
-                answer = bool(answer)
+                if answer in "True":
+                    answer = True
+                elif answer == "False":
+                    answer = False
+
                 # show user: must be a boolean error
                 if answer not in (True, False):
                     print("Answer must be a boolean [true|false]:")
@@ -358,14 +363,15 @@ def getter():
             print(f"<<< Answer set to : {answer} >>>")
 
         error_range = input(f"How many errors for the answer " + f'{JSON_DICT["answer"]}.'+ "\nCan the quizzer make {int} ::  ")
-        
-        try: # try converting error_range to integer
-            error_range = int(error_range) 
-            break
 
-        except ValueError: # show user: must be integer error and ask for input again.
-            print("\nThe number of errors can only be an integer.")
-            ID = int(input("\nRe-enter the number of errors allowed for the answer :: "))
+        while True:
+            try: # try converting error_range to integer
+                error_range = int(error_range) 
+                break
+
+            except ValueError: # show user: must be integer error and ask for input again.
+                print("\nThe number of errors can only be an integer.")
+                error_range = input("\nRe-enter the number of errors allowed for the answer :: ")
 
 # ==========<DIFFICULTY>========== #
 
@@ -429,6 +435,7 @@ def json_dump(JSON_DICT, USER_DATA):
                 # if not, show failure.
                 print(".py File not written!")
     
+
 
 # loop these indefinitely unless user asks to leave.
 while True:
