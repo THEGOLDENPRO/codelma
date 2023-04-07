@@ -1,0 +1,10 @@
+{
+    "omit_code": true,
+    "tags": [
+        "syntax"
+    ],
+    "type": "true_false",
+    "question": "We can write into a text file opened using 'r' mode.",
+    "answer": false,
+    "difficulty": 2
+}

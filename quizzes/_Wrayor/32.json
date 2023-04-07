@@ -1,0 +1,7 @@
+{
+    "omit_code": true,
+    "type": "true_false",
+    "question": "In and statements, if the first values is True it does not check for the second value.",
+    "answer": false,
+    "difficulty": 1
+}

@@ -136,10 +136,16 @@ def getter():
         
     else: # get tags from the user.
         tags = [] # a temporary tags list
+
+        # show user: valid number of tags available.
+        print(f"\nValid Tags: {str(available_tags)[1:-1]}")
+
+        # ask user for the total number of tags needed.
+        total = input('\nTotal tags {int} :: ')
         
         while True:
-            try: # ask user for the total number of tags needed.
-                total = int(input('\nTotal tags {int} :: '))
+            try:
+                total = int(total)
                 
                 # check if the total number of tags in not more than the total number of available_tags
                 if total < len(available_tags)+1:
@@ -150,9 +156,6 @@ def getter():
                 print("Sorry you can only have integers as total number!")
                 total = int(input('\nTry Again : Total tags {int} :: '))
                 
-        # show user: valid number of tags available.
-        print(f"\nValid Tags: {str(available_tags)[1:-1]}")
-
         # take tag input
         for tagnum in range(total):
             tag = input(f'tag {tagnum + 1} :: ')   

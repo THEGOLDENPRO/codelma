@@ -1,0 +1,10 @@
+{
+    "omit_code": true,
+    "tags": [
+        "func"
+    ],
+    "type": "text",
+    "question": " ___ () is the function that reads a text file with specified number of characters and returns a string of bytes from that file.",
+    "answer": "read",
+    "difficulty": 2
+}
