@@ -10,5 +10,8 @@
         "610_00.00_09"
     ],
     "answer": 3,
-    "difficulty": 4
+    "difficulty": 4,
+    "tags": [
+        "output"
+    ]
 }

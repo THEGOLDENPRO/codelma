@@ -1,5 +1,5 @@
 {
-	"omit_code": false,
+    "omit_code": false,
     "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [
@@ -9,5 +9,8 @@
         "[1, 2, 3, 100]"
     ],
     "answer": 1,
-    "difficulty": 1
+    "difficulty": 1,
+    "tags": [
+        "output"
+    ]
 }

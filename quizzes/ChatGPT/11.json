@@ -10,5 +10,11 @@
         "[]"
     ],
     "answer": 2,
-    "difficulty": 4
+    "difficulty": 4,
+    "tags": [
+        "output",
+        "list",
+        "lambda",
+        "sequence"
+    ]
 }

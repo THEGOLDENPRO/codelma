@@ -1,0 +1,37 @@
+{
+
+    "list" : ["list", "lists"],
+    "tuple" : ["tuple", "tuples"],
+    "dict" : ["dictionary", "dict", "dictionaries"],
+    "stack" : ["stack", "stacks"],
+    "sequence" : ["sequence", "list", "lists", "dictionary", "dictionaries",
+    "dict", "array", "tuple", "tuples", "stack", "stacks"],
+
+    "function" : ["function", "functions", "method", "methods", "func", "()", "def"],
+    "scope" : ["scope", "global", "local"],
+    "str" : ["string", "str", "strings"],
+
+    "keyword" : ["keyword", "keywords"],
+    "operator" : ["operator", "operators"],
+    "identifier" : ["identifier", "identifiers"],
+    "naming" : ["naming", "invalid identifier", "valid identifier"],
+    "syntax" : ["syntax"],
+
+    "while" : ["while"],
+    "return" : ["return", "returns"],
+
+    "bool" : ["boolean", "bool", "true", "false"],
+    "statement" : ["statement", "statements"],
+
+    "filehandling" : ["filehandling", "file", "files", "read",
+    "write", "read-write", "read-only", "write-only", "reads",
+    "writes", "reads-writes", "reads-only", "writes-only",
+    "'r'", "'w'", "'r+'", "'w+'", "'a+'","'rb'",
+    "'wb'", "'ab'", "'rb+'", "'wb+'", "'ab+'",
+    "readline", "readlines", "writeline","writelines",
+    "reader", "writer", "load", "dump"],
+
+    "output" : ["output", "outputs", "results", "result", "print", "prints", "printed"],
+    "lambda" : ["lambda"]
+
+}

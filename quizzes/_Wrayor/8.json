@@ -9,5 +9,9 @@
         "<rare:str>"
     ],
     "answer": 0,
-    "difficulty": 3
+    "difficulty": 3,
+    "tags": [
+        "output",
+        "str"
+    ]
 }

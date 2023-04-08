@@ -12,5 +12,10 @@
         "Error"
     ],
     "answer": 2,
-    "difficulty": 1
+    "difficulty": 1,
+    "tags": [
+        "output",
+        "list",
+        "sequence"
+    ]
 }

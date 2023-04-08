@@ -8,5 +8,9 @@
         "128",
         "2"
     ],
-    "answer": 2
+    "answer": 2,
+    "tags": [
+        "output",
+        "while"
+    ]
 }

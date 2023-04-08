@@ -1,13 +1,16 @@
 {
-	"omit_code": true,
-	"type": "multiple_choice",
-	"question": "Which of the following is a valid keyword in Python?",
-	"options": [
-		"false",
-		"return",
-		"non_local",
-		"none"
-	],
-	"answer": 1,
-	"difficulty": 1
+    "omit_code": true,
+    "type": "multiple_choice",
+    "question": "Which of the following is a valid keyword in Python?",
+    "options": [
+        "false",
+        "return",
+        "non_local",
+        "none"
+    ],
+    "answer": 1,
+    "difficulty": 1,
+    "tags": [
+        "keyword"
+    ]
 }

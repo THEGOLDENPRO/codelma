@@ -8,5 +8,10 @@
         "5"
     ],
     "answer": 1,
-    "difficulty": 1
+    "difficulty": 1,
+    "tags": [
+        "output",
+        "list",
+        "sequence"
+    ]
 }

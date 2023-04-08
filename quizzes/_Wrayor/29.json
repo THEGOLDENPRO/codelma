@@ -1,8 +1,5 @@
 {
     "omit_code": true,
-    "tags": [
-        "naming"
-    ],
     "type": "multiple_choice",
     "question": "Which of the following is an invalid identifier?",
     "options": [
@@ -12,5 +9,9 @@
         "mark12"
     ],
     "answer": 1,
-    "difficulty": 1
+    "difficulty": 1,
+    "tags": [
+        "identifier",
+        "naming"
+    ]
 }

@@ -9,5 +9,10 @@
         "Error"
     ],
     "answer": 2,
-    "difficulty": 2
+    "difficulty": 2,
+    "tags": [
+        "output",
+        "dict",
+        "sequence"
+    ]
 }

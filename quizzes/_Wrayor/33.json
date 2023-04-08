@@ -3,5 +3,9 @@
     "type": "true_false",
     "question": "In or statements, if the first values is False then it checks for the second value.",
     "answer": true,
-    "difficulty": 1
+    "difficulty": 1,
+    "tags": [
+        "statement",
+        "bool"
+    ]
 }

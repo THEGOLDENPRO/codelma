@@ -1,13 +1,16 @@
 {
-	"omit_code": true,
-	"type": "multiple_choice",
-	"question": "What is the default value of reference point in seek() function from pickle module?",
-	"options": [
-		"0",
-		"1",
-		"2",
-		"3"
-	],
-	"answer": 0,
-	"difficulty": 3
+    "omit_code": true,
+    "type": "multiple_choice",
+    "question": "What is the default value of reference point in seek() function from pickle module?",
+    "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+    ],
+    "answer": 0,
+    "difficulty": 3,
+    "tags": [
+        "function"
+    ]
 }

@@ -1,13 +1,17 @@
 {
-	"omit_code": false,
-	"type": "multiple_choice",
-	"question": "Which statement will result in an error?",
-	"options": [
-		"Statement 2",
-		"Statement 3",
-		"Statement 4",
-		"Statement 2 and 4"
-	],
-	"answer": 3,
-	"difficulty": 2
+    "omit_code": false,
+    "type": "multiple_choice",
+    "question": "Which statement will result in an error?",
+    "options": [
+        "Statement 2",
+        "Statement 3",
+        "Statement 4",
+        "Statement 2 and 4"
+    ],
+    "answer": 3,
+    "difficulty": 2,
+    "tags": [
+        "output",
+        "statement"
+    ]
 }

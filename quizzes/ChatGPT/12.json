@@ -9,5 +9,9 @@
         "dlroW ,olleH"
     ],
     "answer": 0,
-    "difficulty": 2
+    "difficulty": 2,
+    "tags": [
+        "output",
+        "str"
+    ]
 }

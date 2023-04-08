@@ -8,5 +8,8 @@
         "ValueError",
         "<class 'float'>"
     ],
-    "answer": 3
+    "answer": 3,
+    "tags": [
+        "output"
+    ]
 }

@@ -10,5 +10,10 @@
         "{1: 'b', 2: 'a', 3: 'c'}"
     ],
     "answer": 4,
-    "difficulty": 3
+    "difficulty": 3,
+    "tags": [
+        "output",
+        "dict",
+        "sequence"
+    ]
 }

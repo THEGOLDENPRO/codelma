@@ -3,5 +3,10 @@
     "type": "true_false",
     "question": "What is the result of this code?",
     "answer": true,
-    "difficulty": 2
+    "difficulty": 2,
+    "tags": [
+        "output",
+        "bool",
+        "filehandling"
+    ]
 }

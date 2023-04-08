@@ -1,14 +1,17 @@
 {
-	"omit_code": false,
+    "omit_code": false,
     "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [
-        "False",  
+        "False",
         "True",
         "{1, 2, 3, 4, 5, 6}",
         "{4, 5, 6}",
         "{1, 2, 3}"
     ],
     "answer": 2,
-    "difficulty": 4
+    "difficulty": 4,
+    "tags": [
+        "output"
+    ]
 }

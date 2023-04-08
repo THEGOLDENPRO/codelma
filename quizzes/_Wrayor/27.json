@@ -1,8 +1,11 @@
 {
-	"omit_code": true,
-	"type": "text",
-	"question": "___ operators are those operators who compare two values.",
-	"answer": "arithmetic",
-	"error_range": 2,
-	"difficulty": 1
+    "omit_code": true,
+    "type": "text",
+    "question": "___ operators are those operators who compare two values.",
+    "answer": "arithmetic",
+    "error_range": 2,
+    "difficulty": 1,
+    "tags": [
+        "operator"
+    ]
 }

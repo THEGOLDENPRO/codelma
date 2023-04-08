@@ -1,13 +1,16 @@
 {
-	"omit_code": false,
+    "omit_code": false,
     "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [
-        "0: Elon\n1: Jeff\n2: Andrew\n3: Berg",  
-        "1: Elon\n2: Jeff\n3: Andrew\n4: Berg", 
+        "0: Elon\n1: Jeff\n2: Andrew\n3: Berg",
+        "1: Elon\n2: Jeff\n3: Andrew\n4: Berg",
         "0: Jeff\n1: Andrew\n2: Berg",
         "1: Jeff\n2: Andrew\n3: Berg"
     ],
     "answer": 1,
-    "difficulty": 3
+    "difficulty": 3,
+    "tags": [
+        "output"
+    ]
 }

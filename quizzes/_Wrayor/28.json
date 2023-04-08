@@ -1,11 +1,12 @@
 {
     "omit_code": true,
-    "tags": [
-        "list",
-        "str"
-    ],
     "type": "true_false",
     "question": "Both List and String are mutable sequence type datatypes in python.",
     "answer": false,
-    "difficulty": 1
+    "difficulty": 1,
+    "tags": [
+        "str",
+        "list",
+        "sequence"
+    ]
 }

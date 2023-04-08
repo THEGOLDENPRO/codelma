@@ -10,5 +10,12 @@
         "None of the above"
     ],
     "answer": 1,
-    "difficulty": 5
+    "difficulty": 5,
+    "tags": [
+        "output",
+        "str",
+        "list",
+        "lambda",
+        "sequence"
+    ]
 }

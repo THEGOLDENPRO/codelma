@@ -1,7 +1,10 @@
 {
-	"omit_code": false,
+    "omit_code": false,
     "type": "true_false",
     "question": "What is the result of this code?",
     "answer": false,
-    "difficulty": 3
+    "difficulty": 3,
+    "tags": [
+        "output"
+    ]
 }

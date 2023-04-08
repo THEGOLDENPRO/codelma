@@ -1,7 +1,12 @@
 {
-	"omit_code": true,
-	"type": "true_false",
-	"question": "a stack is a LIFO structure.",
-	"answer": true,
-	"difficulty": 2
+    "omit_code": true,
+    "type": "true_false",
+    "question": "A stack is a LIFO structure.",
+    "answer": true,
+    "difficulty": 2,
+    "tags": [
+        "str",
+        "stack",
+        "sequence"
+    ]
 }

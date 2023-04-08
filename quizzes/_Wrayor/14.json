@@ -1,13 +1,19 @@
 {
-	"omit_code": true,
-	"type": "multiple_choice",
-	"question": "Which function returns the sum of all elements of a list?",
-	"options": [
-		"count()",
-		"sum()",
-		"total()",
-		"add()"
-	],
-	"answer": 1,
-	"difficulty": 2
+    "omit_code": true,
+    "type": "multiple_choice",
+    "question": "Which function returns the sum of all elements of a list?",
+    "options": [
+        "count()",
+        "sum()",
+        "total()",
+        "add()"
+    ],
+    "answer": 1,
+    "difficulty": 2,
+    "tags": [
+        "list",
+        "return",
+        "function",
+        "sequence"
+    ]
 }

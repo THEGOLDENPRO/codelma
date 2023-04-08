@@ -1,13 +1,16 @@
 {
-	"omit_code": false,
+    "omit_code": false,
     "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [
-        "2.0",  
+        "2.0",
         "20.0",
         "0.2",
         "None of the options"
     ],
     "answer": 3,
-    "difficulty": 4
+    "difficulty": 4,
+    "tags": [
+        "output"
+    ]
 }

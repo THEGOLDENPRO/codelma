@@ -1,14 +1,18 @@
 {
-	"omit_code": false,
+    "omit_code": false,
     "type": "multiple_choice",
     "question": "What is the result of this code?",
     "options": [
-        "",  
+        "",
         "[[19 22],\n[43 50]]",
         "[[19 22]\n[43 50]]",
         "[[5 12]\n[21 32]]",
         "[[5 12],\n[21 32]]"
     ],
     "answer": 1,
-    "difficulty": 4
+    "difficulty": 4,
+    "tags": [
+        "output",
+        "sequence"
+    ]
 }

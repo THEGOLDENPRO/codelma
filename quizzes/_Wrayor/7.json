@@ -9,5 +9,9 @@
         "string[-1:0:1]"
     ],
     "answer": 2,
-    "difficulty": 2
+    "difficulty": 2,
+    "tags": [
+        "str",
+        "output"
+    ]
 }

@@ -1,7 +1,11 @@
 {
-	"omit_code": true,
-	"type": "true_false",
-	"question": "Identifiers are name used to identify a variable, function in a program.",
-	"answer": true,
-	"difficulty": 1
+    "omit_code": true,
+    "type": "true_false",
+    "question": "Identifiers are name used to identify a variable, function in a program.",
+    "answer": true,
+    "difficulty": 1,
+    "tags": [
+        "identifier",
+        "function"
+    ]
 }

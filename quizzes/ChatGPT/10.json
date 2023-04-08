@@ -11,5 +11,10 @@
         "{'a': 1, 'b': 0, 'c': 3}"
     ],
     "answer": 0,
-    "difficulty": 1
+    "difficulty": 1,
+    "tags": [
+        "output",
+        "dict",
+        "sequence"
+    ]
 }
