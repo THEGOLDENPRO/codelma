@@ -10,8 +10,9 @@
     "answer": 2,
     "difficulty": 1,
     "tags": [
-        "list",
+        "sequence",
         "output",
-        "sequence"
+        "list",
+        "function"
     ]
 }

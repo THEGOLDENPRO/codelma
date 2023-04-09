@@ -13,6 +13,7 @@
     "difficulty": 4,
     "tags": [
         "output",
-        "sequence"
+        "sequence",
+        "function"
     ]
 }

@@ -11,6 +11,7 @@
     "answer": 3,
     "difficulty": 4,
     "tags": [
-        "output"
+        "output",
+        "function"
     ]
 }

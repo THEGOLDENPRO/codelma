@@ -5,6 +5,7 @@
     "answer": false,
     "difficulty": 3,
     "tags": [
-        "output"
+        "output",
+        "function"
     ]
 }

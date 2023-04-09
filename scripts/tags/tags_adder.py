@@ -59,7 +59,7 @@ for creator in creators:
 
             # gathered the dictionary from json file.
 
-            print(creator, directory)
+            # print(creator, directory) # testing purpose only
             
             data = load(file)
 
@@ -77,5 +77,7 @@ for creator in creators:
             data["tags"] = list(tag_set)
                         
             dump(data, open(f'quizzes\\{creator}\\{directory}', 'w'), indent=4)
+
+    print(f"Added  tags to {creator}'s quizzes ") # testing purpose only
 
 

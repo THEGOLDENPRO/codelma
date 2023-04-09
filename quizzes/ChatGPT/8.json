@@ -13,8 +13,9 @@
     "answer": 3,
     "difficulty": 2,
     "tags": [
-        "list",
+        "sequence",
         "output",
-        "sequence"
+        "list",
+        "function"
     ]
 }

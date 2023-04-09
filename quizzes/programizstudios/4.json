@@ -9,9 +9,10 @@
     ],
     "answer": 1,
     "tags": [
-        "elif",
         "if",
         "output",
-        "else"
+        "else",
+        "function",
+        "elif"
     ]
 }

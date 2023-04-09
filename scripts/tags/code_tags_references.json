@@ -7,7 +7,7 @@
     "sequence" : ["sequence", "list", "lists", "dictionary", "dictionaries",
     "dict", "array", "tuple", "tuples", "stack", "stacks", "append", "pop"],
 
-    "function" : ["function", "functions", "method", "methods", "func", "()", "def"],
+    "function" : ["function", "functions", "method", "methods", "func", "()", "def", "add", "sum", "remove", "map", ""],
     "scope" : ["scope", "global", "local"],
     "str" : ["string", "str", "strings"],
 

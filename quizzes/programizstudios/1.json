@@ -10,9 +10,10 @@
     ],
     "answer": 3,
     "tags": [
-        "statement",
-        "for",
         "if",
-        "output"
+        "output",
+        "statement",
+        "function",
+        "for"
     ]
 }

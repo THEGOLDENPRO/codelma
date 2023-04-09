@@ -13,8 +13,9 @@
     "answer": 0,
     "difficulty": 1,
     "tags": [
+        "sequence",
         "dict",
         "output",
-        "sequence"
+        "function"
     ]
 }

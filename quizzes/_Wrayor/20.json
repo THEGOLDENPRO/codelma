@@ -11,9 +11,10 @@
     "answer": 3,
     "difficulty": 2,
     "tags": [
-        "statement",
-        "list",
         "output",
-        "sequence"
+        "statement",
+        "sequence",
+        "list",
+        "function"
     ]
 }

@@ -13,8 +13,9 @@
     "difficulty": 4,
     "tags": [
         "lambda",
-        "list",
+        "sequence",
         "output",
-        "sequence"
+        "list",
+        "function"
     ]
 }

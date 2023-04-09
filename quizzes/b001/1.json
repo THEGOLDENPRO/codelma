@@ -11,8 +11,9 @@
     "answer": 1,
     "difficulty": 2,
     "tags": [
-        "output",
         "while",
-        "else"
+        "output",
+        "else",
+        "function"
     ]
 }

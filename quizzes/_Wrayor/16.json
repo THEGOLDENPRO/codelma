@@ -6,7 +6,7 @@
     "error_range": 2,
     "difficulty": 3,
     "tags": [
-        "sequence",
-        "tuple"
+        "tuple",
+        "sequence"
     ]
 }
