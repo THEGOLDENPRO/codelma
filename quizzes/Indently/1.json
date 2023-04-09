@@ -13,9 +13,9 @@
     "difficulty": 2,
     "tags": [
         "statement",
-        "str",
         "output",
         "function",
-        "for"
+        "for",
+        "str"
     ]
 }

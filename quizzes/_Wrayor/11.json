@@ -11,8 +11,8 @@
     "answer": 1,
     "difficulty": 1,
     "tags": [
-        "return",
         "operator",
+        "return",
         "bool"
     ]
 }

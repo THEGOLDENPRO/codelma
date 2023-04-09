@@ -7,8 +7,8 @@
     "answer": true,
     "difficulty": 2,
     "tags": [
-        "sequence",
         "stack",
+        "sequence",
         "function"
     ]
 }

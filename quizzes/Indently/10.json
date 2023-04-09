@@ -5,9 +5,9 @@
     "answer": false,
     "difficulty": 4,
     "tags": [
-        "output",
-        "sequence",
         "list",
-        "function"
+        "sequence",
+        "function",
+        "output"
     ]
 }

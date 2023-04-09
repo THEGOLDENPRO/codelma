@@ -6,8 +6,8 @@
     "error_range": 0,
     "difficulty": 2,
     "tags": [
-        "sequence",
         "list",
+        "sequence",
         "function"
     ]
 }

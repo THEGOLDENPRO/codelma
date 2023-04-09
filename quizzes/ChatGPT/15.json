@@ -12,11 +12,11 @@
     "answer": 1,
     "difficulty": 5,
     "tags": [
-        "lambda",
         "sequence",
-        "str",
         "output",
         "list",
-        "function"
+        "function",
+        "lambda",
+        "str"
     ]
 }

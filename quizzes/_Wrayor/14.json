@@ -11,9 +11,9 @@
     "answer": 1,
     "difficulty": 2,
     "tags": [
-        "sequence",
+        "return",
         "list",
-        "function",
-        "return"
+        "sequence",
+        "function"
     ]
 }

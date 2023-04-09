@@ -12,10 +12,10 @@
     "answer": 2,
     "difficulty": 4,
     "tags": [
-        "lambda",
         "sequence",
-        "output",
         "list",
-        "function"
+        "output",
+        "function",
+        "lambda"
     ]
 }

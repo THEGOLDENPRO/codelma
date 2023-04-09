@@ -11,10 +11,10 @@
     "answer": 0,
     "difficulty": 2,
     "tags": [
-        "if",
+        "return",
         "output",
         "else",
-        "return",
-        "function"
+        "function",
+        "if"
     ]
 }

@@ -5,9 +5,9 @@
     "answer": true,
     "difficulty": 2,
     "tags": [
-        "bool",
         "output",
         "function",
+        "bool",
         "filehandling"
     ]
 }

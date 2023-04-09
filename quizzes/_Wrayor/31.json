@@ -5,9 +5,9 @@
     "answer": "read",
     "difficulty": 2,
     "tags": [
+        "str",
         "return",
         "function",
-        "filehandling",
-        "str"
+        "filehandling"
     ]
 }

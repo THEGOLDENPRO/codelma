@@ -5,7 +5,7 @@ from os import listdir
 
 ###### GLOBAL-VARIABLES ######
 
-creators = ["_Wrayor", "b001", "ChatGPT", "Indently", "programizstudios"]
+creators = list(listdir('quizzes\\'))
 directories: list = [] 
 
 def string_only_aplha(string:str) -> str:
