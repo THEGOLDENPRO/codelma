@@ -9,7 +9,8 @@ creators = ["_Wrayor", "b001", "ChatGPT", "Indently", "programizstudios"]
 directories: list = [] 
 
 def string_only_aplha(string:str) -> str:
-    """a function that takes a string and removes all the non alpha characters and returns the clean string"""
+    
+    # a function that takes a string and removes all the non alpha characters and returns the clean string
 
     clean = ""
 
@@ -64,6 +65,8 @@ for creator in creators:
 
             tag_set:set = tagger(data["question"])
 
+            # checking if the question has a .py file and reading that file to search for tags.
+
             if data["omit_code"] != True:
                 with open(f'quizzes\\{creator}\\{directory[:-4]}py', 'r') as pyfile:
                     for line in pyfile:
@@ -74,8 +77,3 @@ for creator in creators:
             dump(data, open(f'quizzes\\{creator}\\{directory}', 'w'), indent=4)
 
 
-    #creator = 'b001'; directory =  '10.json'
-
-
-
-    
