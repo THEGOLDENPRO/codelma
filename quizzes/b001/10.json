@@ -12,9 +12,9 @@
     "answer": 4,
     "difficulty": 3,
     "tags": [
-        "output",
-        "list",
         "lambda",
+        "list",
+        "output",
         "sequence"
     ]
 }

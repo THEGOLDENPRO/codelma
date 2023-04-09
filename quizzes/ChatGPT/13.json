@@ -12,8 +12,9 @@
     "answer": 4,
     "difficulty": 3,
     "tags": [
-        "output",
         "dict",
+        "for",
+        "output",
         "sequence"
     ]
 }

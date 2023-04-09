@@ -12,8 +12,9 @@
     "answer": 3,
     "difficulty": 2,
     "tags": [
-        "str",
+        "statement",
+        "for",
         "output",
-        "statement"
+        "str"
     ]
 }

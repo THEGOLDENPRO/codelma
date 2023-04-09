@@ -13,8 +13,8 @@
     "answer": 0,
     "difficulty": 1,
     "tags": [
-        "output",
         "dict",
+        "output",
         "sequence"
     ]
 }

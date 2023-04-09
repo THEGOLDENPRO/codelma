@@ -12,6 +12,8 @@
     "answer": 1,
     "difficulty": 1,
     "tags": [
-        "output"
+        "output",
+        "sequence",
+        "list"
     ]
 }

@@ -5,8 +5,8 @@
     "answer": true,
     "difficulty": 2,
     "tags": [
-        "str",
         "stack",
-        "sequence"
+        "sequence",
+        "str"
     ]
 }

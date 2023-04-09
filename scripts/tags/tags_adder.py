@@ -21,11 +21,11 @@ def string_only_aplha(string:str) -> str:
     return clean
 
 
-def tagger(string: str) -> str:
+def tagger(string: str, ref_json_file: str) -> str:
     
     # adding references for tag.
 
-    tag_references = load(open('scripts\\tags\\tags_references.json', 'r'))
+    tag_references = load(open(f'scripts\\tags\\{ref_json_file}.json', 'r'))
 
     # defining a set of tags.
 
@@ -63,15 +63,17 @@ for creator in creators:
             
             data = load(file)
 
-            tag_set:set = tagger(data["question"])
+            tag_set:set = tagger(data["question"], 'tags_references')
 
             # checking if the question has a .py file and reading that file to search for tags.
 
             if data["omit_code"] != True:
                 with open(f'quizzes\\{creator}\\{directory[:-4]}py', 'r') as pyfile:
                     for line in pyfile:
-                        tag_set = tag_set.union(tagger(line))
-
+                        tag_set = tag_set.union(tagger(line, 'code_tags_references'))
+                        
+            # update the dictionary
+            
             data["tags"] = list(tag_set)
                         
             dump(data, open(f'quizzes\\{creator}\\{directory}', 'w'), indent=4)

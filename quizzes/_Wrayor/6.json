@@ -5,8 +5,8 @@
     "answer": true,
     "difficulty": 2,
     "tags": [
+        "filehandling",
         "output",
-        "bool",
-        "filehandling"
+        "bool"
     ]
 }

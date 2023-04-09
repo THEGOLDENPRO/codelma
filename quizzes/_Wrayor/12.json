@@ -12,8 +12,8 @@
     "difficulty": 2,
     "tags": [
         "output",
-        "sequence",
         "statement",
+        "sequence",
         "tuple"
     ]
 }
