@@ -46,7 +46,7 @@ def tagger(string: str, ref_json_file: str) -> str:
     return tag_list
 
 
-###### CREATOR-LOOP ######
+###### TAG-ADDING ######
 
 for creator in creators:
     directories = [f for f in listdir(f"quizzes//{creator}") if f.endswith(".json")]

@@ -1,6 +1,6 @@
 i = 0
 while i < 3:
-    print(i)
+    print(i, end = ' ')
     i += 1
 else:
-    print(0)
+    print(0, end = ' ')

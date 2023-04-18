@@ -1,4 +1,4 @@
-with open("resources\\anyfile.txt", 'r') as File:
-    texts = File.readlines()
+with open("resources\\anyfile.txt", 'w+') as File:
+    texts = File.write(0)
 
-print(File.closed) # boolean attribute
+print(File.closed)

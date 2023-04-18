@@ -8,8 +8,8 @@
         "True\nTrue",
         "False\nTrue"
     ],
-    "answer": 1,
-    "difficulty": 3,
+    "answer": 3,
+    "difficulty": 1,
     "tags": [
         "output",
         "function"
