@@ -4,6 +4,7 @@
     "question": "The ___ statement exits the current loop and goes to the next iteration of it.",
     "answer": "continue",
     "error_range": 0,
+    "case": true,
     "difficulty": 2,
     "tags": [
         "statement"

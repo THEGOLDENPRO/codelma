@@ -1,9 +1,10 @@
 {
     "omit_code": true,
     "type": "text",
-    "question": "___ operators are those operators who compare two values.",
+    "question": " ___ operators are those operators which compare two values.",
     "answer": "arithmetic",
     "error_range": 2,
+    "case": false,
     "difficulty": 1,
     "tags": [
         "operator"

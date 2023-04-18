@@ -4,7 +4,7 @@
     "omit_code": true,
     "type": "true_false",
     "question": "Push(item, Stack) is a user-defined function of a stack, where the item is added to the bottom of the Stack.",
-    "answer": true,
+    "answer": false,
     "difficulty": 2,
     "tags": [
         "stack",

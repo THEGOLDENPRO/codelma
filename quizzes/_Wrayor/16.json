@@ -1,9 +1,10 @@
 {
     "omit_code": true,
     "type": "text",
-    "question": "___ is a number of tuples in a relation. {Reference to Databases}",
+    "question": " ___ is a number of tuples in a relation. {Reference to Databases}",
     "answer": "Cardinality",
     "error_range": 2,
+    "case": false,
     "difficulty": 3,
     "tags": [
         "tuple",

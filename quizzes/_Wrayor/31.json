@@ -3,6 +3,7 @@
     "type": "text",
     "question": " ___ () is the function that reads a text file with specified number of characters and returns a string of bytes from that file.",
     "answer": "read",
+    "case": true,
     "difficulty": 2,
     "tags": [
         "str",
