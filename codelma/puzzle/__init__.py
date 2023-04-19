@@ -51,26 +51,22 @@ ID: {quiz.creator.id}/{quiz.id}
 
         await self.send_quiz(quiz_embed, quiz)
 
-    async def send_quiz(self, embed: nextcord.Embed, quiz: Quiz):
+    async def send_quiz(self, embed: nextcord.Embed, quiz: Quiz) -> bool:
         self.logger.debug(f"Sending quiz '{quiz.creator.name}/{quiz.id}'...")
 
         if quiz.type == QuizTypes.TRUE_FALSE.name.lower():
             view = views.TrueFalse(self.interaction.user, quiz.answer)
 
-            await self.interaction.send(embed=embed, view=view)
-
-            return await view.wait()
-
-        if quiz.type == QuizTypes.MULTIPLE_CHOICE.name.lower():
+        elif quiz.type == QuizTypes.MULTIPLE_CHOICE.name.lower():
             view = views.MultiChoice(self.interaction.user, quiz.answer, quiz.options)
 
-            await self.interaction.send(embed=embed, view=view)
-
-            return await view.wait()
-
-        if quiz.type == QuizTypes.TEXT.name.lower():
+        elif quiz.type == QuizTypes.TEXT.name.lower():
             view = views.Text(self.interaction.user, quiz.answer)
 
-            await self.interaction.send(embed=embed, view=view)
+        else:
+            raise TypeError(
+                "Quiz type not supported, you may open a github issue at https://github.com/THEGOLDENPRO/codelma/issues"
+            )
 
-            return await view.wait()
+        await self.interaction.send(embed=embed, view=view)
+        return await view.wait()
