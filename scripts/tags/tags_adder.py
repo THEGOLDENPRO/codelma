@@ -8,7 +8,7 @@ from os import listdir
 creators = list(listdir('quizzes\\'))
 directories: list = [] 
 
-def string_only_aplha(string:str) -> str:
+def string_only_alpha(string:str) -> str:
     
     # a function that takes a string and removes all the non alpha characters and returns the clean string
 
@@ -32,7 +32,7 @@ def tagger(string: str, ref_json_file: str) -> str:
     tag_list: set = {0,}
     tag_list.clear()
 
-    string = string_only_aplha(string).lower()
+    string = string_only_alpha(string).lower()
 
     # checking for the tags in the string.
 
