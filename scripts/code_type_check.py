@@ -1,10 +1,8 @@
-
 from json import load
 from os import listdir, system
 import time
 
 system("cls")
-
 
 ### Credit to Allosteric on Stack Overflow for this section ###
 
@@ -85,7 +83,7 @@ def log_defects(FilePath, external_header, error_type = 'Unidentified'):
         with open(f"{LogPath}{File}", "a" ) as LogFile:
             # Write the error file with sepcified errors.
             LogFile.writelines([f"{FilePath} Defect : {error_type.title()}\n\n"])
-            
+
     # If not then create the file with the first line containing the session data.
     else:
         with open(f"{LogPath}{File}", "w") as LogFile:
@@ -93,7 +91,7 @@ def log_defects(FilePath, external_header, error_type = 'Unidentified'):
             LogFile.writelines([f"Log File Dated : {external_header} : \n\n",
                                 f"{FilePath} Defect : {error_type.title()}\n\n"]) 
             log_written = True # define Log file has been created this session
-            
+
 
 # Collect the names of quiz authors in a list.
 creators = list(listdir('quizzes\\'))
@@ -148,14 +146,14 @@ for creator in creators:
                 # log with defined error.
                 log_defects(FilePath, ext, option)
                 break
-                
+
             # if the quiz is correct then leave the loop and don't log anything.
             elif choice == '': break
-            
-        # or if the user has not identified the error then log with unidentified.
+
+        # Or if the user has not identified the error then log with unidentified.
         else:
             log_defects(FilePath, ext)
-        
-        
+
+
         system("cls")
 
